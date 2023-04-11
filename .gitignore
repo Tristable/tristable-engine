@@ -1,0 +1,6 @@
+/*
+
+!lib/
+!*.json
+!.gitignore
+!build/
