@@ -3,5 +3,5 @@
 !lib/
 !*.json
 !.gitignore
-!build/
+!build/lib
 !.gitattributes

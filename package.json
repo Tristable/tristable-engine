@@ -1,21 +1,22 @@
 {
     "name": "tristable-engine",
-    "version": "1.0.0",
-    "description": "",
+    "version": "0.1.0",
+    "description": "A JS/TS game engine for making simple games.",
     "main": "build/lib/tristable.js",
     "types": "build/lib/tristable.d.ts",
     "type": "module",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
     "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "author": "Tristable",
+    "license": "GPLv3",
     "devDependencies": {
         "@types/offscreencanvas": "^2019.7.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
         "eslint": "^8.33.0",
+        "typedoc": "^0.24.1",
         "typescript": "^5.0.2"
-    }
+    },
+    "files": [
+        "/build/lib"
+    ]
 }
