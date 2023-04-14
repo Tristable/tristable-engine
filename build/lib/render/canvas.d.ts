@@ -1,4 +1,3 @@
-/// <reference types="offscreencanvas" />
 import { Vector2 } from "../math/Vector2.js";
 export interface CanvasConfig {
     size: Vector2;

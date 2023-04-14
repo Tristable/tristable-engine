@@ -27,7 +27,7 @@ export interface KeyActionEvent extends ActionEventBase {
     type: ActionEventType.Key;
     code: string;
 }
-export declare type ActionEvent = MouseButtonActionEvent | MouseMovementActionEvent | MouseWheelActionEvent | KeyActionEvent;
+export type ActionEvent = MouseButtonActionEvent | MouseMovementActionEvent | MouseWheelActionEvent | KeyActionEvent;
 export declare class Action {
     #private;
     addEvent(e: ActionEvent): Action;

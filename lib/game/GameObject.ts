@@ -21,7 +21,7 @@ export class GameObject {
         GameObject.cache.set(this.id, this);
     }
 
-    addComponent(component: Component) {
+    addComponent(component: Component): void {
         this.#components.add(component);
     }
 

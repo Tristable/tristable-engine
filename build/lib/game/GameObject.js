@@ -1,4 +1,4 @@
-export class GameObject {
+class GameObject {
     static nextFreeID = 0;
     static cache = new Map();
     id;
@@ -89,3 +89,4 @@ export class GameObject {
         return this.#children.find((v) => v.name == name) ?? null;
     }
 }
+export { GameObject };
