@@ -5,8 +5,13 @@
     "main": "build/lib/tristable.js",
     "types": "build/lib/tristable.d.ts",
     "type": "module",
-    "keywords": [],
-    "author": "Tristable",
+    "keywords": ["tristable", "game", "engine", "javascript", "js", "typescript", "ts", "browser", "web"],
+    "contributors": [
+        {
+            "name": "TrueSunGaming",
+            "url": "https://truesungaming.github.io"
+        }
+    ],
     "license": "GPLv3",
     "devDependencies": {
         "@types/offscreencanvas": "^2019.7.0",
@@ -18,5 +23,13 @@
     },
     "files": [
         "/build/lib"
-    ]
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Tristable/tristable-engine.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Tristable/tristable-engine/issues"
+    },
+    "homepage": "https://tristable.github.io/tristable-engine"
 }

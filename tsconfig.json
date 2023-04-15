@@ -7,7 +7,7 @@
         "strict": true,
         "skipLibCheck": true,
         "declaration": true,
-        "allowJs": true,
+        "allowJs": false,
         "outDir": "build",
         "module": "ESNext"
     }
