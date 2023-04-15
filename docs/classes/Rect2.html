@@ -15,6 +15,9 @@
 <li><a href="../modules.html">tristable-engine</a></li>
 <li><a href="Rect2.html">Rect2</a></li></ul>
 <h1>Class Rect2</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>A 2D axis-aligned bounding box (AABB). Includes extra methods for math and utility.</p>
+</div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
@@ -24,7 +27,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/Rectangle.html" class="tsd-signature-type" data-tsd-kind="Interface">Rectangle</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L22">math/Rect2.ts:22</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L41">math/Rect2.ts:41</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -78,21 +81,25 @@
 <h5>size: <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L26">math/Rect2.ts:26</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L48">math/Rect2.ts:48</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="pos" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>pos</span><a href="#pos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">pos<span class="tsd-signature-symbol">:</span> <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></div><aside class="tsd-sources">
+<div class="tsd-signature">pos<span class="tsd-signature-symbol">:</span> <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></div>
+<div class="tsd-comment tsd-typography"><p>The position of the rectangle. (Top-left corner if <code>x</code> and <code>y</code> of <code>size</code> are both &gt;= <code>0</code>)</p>
+</div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Rectangle.html">Rectangle</a>.<a href="../interfaces/Rectangle.html#pos">pos</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L23">math/Rect2.ts:23</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L43">math/Rect2.ts:43</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="size" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>size</span><a href="#size" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">size<span class="tsd-signature-symbol">:</span> <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></div><aside class="tsd-sources">
+<div class="tsd-signature">size<span class="tsd-signature-symbol">:</span> <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></div>
+<div class="tsd-comment tsd-typography"><p>The size of the rectangle.</p>
+</div><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Rectangle.html">Rectangle</a>.<a href="../interfaces/Rectangle.html#size">size</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L24">math/Rect2.ts:24</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L46">math/Rect2.ts:46</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Accessors</h2>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="area" class="tsd-anchor"></a>
@@ -100,49 +107,61 @@
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 <li class="tsd-signature" id="area.area-1"><span class="tsd-signature-symbol">get</span> area<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the area of the <code>Rect2</code>.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L73">math/Rect2.ts:73</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L107">math/Rect2.ts:107</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="bounds" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>bounds</span><a href="#bounds" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 <li class="tsd-signature" id="bounds.bounds-1"><span class="tsd-signature-symbol">get</span> bounds<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/RectBounds.html" class="tsd-signature-type" data-tsd-kind="Interface">RectBounds</a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the <code>RectBounds</code> of the <code>Rect2</code>.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <a href="../interfaces/RectBounds.html" class="tsd-signature-type" data-tsd-kind="Interface">RectBounds</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L81">math/Rect2.ts:81</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L117">math/Rect2.ts:117</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="copy" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>copy</span><a href="#copy" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 <li class="tsd-signature" id="copy.copy-1"><span class="tsd-signature-symbol">get</span> copy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a copy of the <code>Rect2</code>. Also clones properties.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L35">math/Rect2.ts:35</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L59">math/Rect2.ts:59</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="perimeter" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>perimeter</span><a href="#perimeter" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 <li class="tsd-signature" id="perimeter.perimeter-1"><span class="tsd-signature-symbol">get</span> perimeter<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the perimeter of the <code>Rect2</code>.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L77">math/Rect2.ts:77</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L112">math/Rect2.ts:112</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="screen" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>screen</span><a href="#screen" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 <li class="tsd-signature" id="screen.screen-1"><span class="tsd-signature-symbol">get</span> screen<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Converts the <code>Rect2</code> from world coordinates to screen coordinates using the <code>currentCamera</code>.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L127">math/Rect2.ts:127</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L167">math/Rect2.ts:167</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="world" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>world</span><a href="#world" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 <li class="tsd-signature" id="world.world-1"><span class="tsd-signature-symbol">get</span> world<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Converts the <code>Rect2</code> from screen coordinates to world coordinates using the <code>currentCamera</code>.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L131">math/Rect2.ts:131</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L172">math/Rect2.ts:172</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="comparisonData" class="tsd-anchor"></a>
@@ -150,6 +169,8 @@
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="comparisonData.comparisonData-1">comparison<wbr/>Data<span class="tsd-signature-symbol">(</span>rect<span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/RectComparisonData.html" class="tsd-signature-type" data-tsd-kind="Interface">RectComparisonData</a><a href="#comparisonData.comparisonData-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the <code>RectComparisonData</code> of the <code>Rect2</code> and another <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -157,12 +178,14 @@
 <h5>rect: <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="../interfaces/RectComparisonData.html" class="tsd-signature-type" data-tsd-kind="Interface">RectComparisonData</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L102">math/Rect2.ts:102</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L141">math/Rect2.ts:141</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="expand" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>expand</span><a href="#expand" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="expand.expand-1">expand<span class="tsd-signature-symbol">(</span>px<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#expand.expand-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Expands the size of the <code>Rect2</code> by a number equally on all sides. Creates a new <code>Rect2</code> and does not modify the original <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -170,12 +193,14 @@
 <h5>px: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L63">math/Rect2.ts:63</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L93">math/Rect2.ts:93</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="expandAssign" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>expand<wbr/>Assign</span><a href="#expandAssign" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="expandAssign.expandAssign-1">expand<wbr/>Assign<span class="tsd-signature-symbol">(</span>px<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#expandAssign.expandAssign-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Expands the size of the <code>Rect2</code> by a number equally on all sides. Modifies the original <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -183,12 +208,14 @@
 <h5>px: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L67">math/Rect2.ts:67</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L98">math/Rect2.ts:98</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="inside" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>inside</span><a href="#inside" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="inside.inside-1">inside<span class="tsd-signature-symbol">(</span>p<span class="tsd-signature-symbol">: </span><a href="../interfaces/Point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#inside.inside-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns if a point is inside the <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -196,12 +223,14 @@
 <h5>p: <a href="../interfaces/Point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L97">math/Rect2.ts:97</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L135">math/Rect2.ts:135</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="overlap" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>overlap</span><a href="#overlap" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="overlap.overlap-1">overlap<span class="tsd-signature-symbol">(</span>rect<span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#overlap.overlap-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns if the <code>Rect2</code> overlaps another <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -209,12 +238,14 @@
 <h5>rect: <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L90">math/Rect2.ts:90</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L127">math/Rect2.ts:127</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="scale" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>scale</span><a href="#scale" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="scale.scale-1">scale<span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#scale.scale-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Scales the <code>Rect2</code> by a scale factor. Creates a new <code>Rect2</code> and does not modify the original <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -222,12 +253,14 @@
 <h5>f: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L54">math/Rect2.ts:54</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L82">math/Rect2.ts:82</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="scaleAssign" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>scale<wbr/>Assign</span><a href="#scaleAssign" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="scaleAssign.scaleAssign-1">scale<wbr/>Assign<span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#scaleAssign.scaleAssign-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Scales the <code>Rect2</code> by a scale factor. Modifies the original <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -235,12 +268,14 @@
 <h5>f: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L58">math/Rect2.ts:58</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L87">math/Rect2.ts:87</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="set" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set</span><a href="#set" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="set.set-1">set<span class="tsd-signature-symbol">(</span>r<span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#set.set-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets the position and size of the <code>Rect2</code> to another <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -248,12 +283,14 @@
 <h5>r: <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L39">math/Rect2.ts:39</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L64">math/Rect2.ts:64</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="translate" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>translate</span><a href="#translate" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="translate.translate-1">translate<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="../interfaces/Point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#translate.translate-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Translates the <code>Rect2</code> by a point. Creates a new <code>Rect2</code> and does not modify the original <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -261,12 +298,14 @@
 <h5>v: <a href="../interfaces/Point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L45">math/Rect2.ts:45</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L71">math/Rect2.ts:71</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="translateAssign" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>translate<wbr/>Assign</span><a href="#translateAssign" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="translateAssign.translateAssign-1">translate<wbr/>Assign<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="../interfaces/Point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#translateAssign.translateAssign-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Translates the <code>Rect2</code> by a point. Modifies the original <code>Rect2</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -274,12 +313,14 @@
 <h5>v: <a href="../interfaces/Point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L49">math/Rect2.ts:49</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L76">math/Rect2.ts:76</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="xywh" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>xywh</span><a href="#xywh" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="xywh.xywh-1">xywh<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a><a href="#xywh.xywh-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Creates a <code>Rect2</code> from <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code> numbers instead of <code>pos</code> and <code>size</code></p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -293,7 +334,7 @@
 <h5>height: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Rect2.html" class="tsd-signature-type" data-tsd-kind="Class">Rect2</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d3e8386/lib/math/Rect2.ts#L31">math/Rect2.ts:31</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d5a40ba/lib/math/Rect2.ts#L54">math/Rect2.ts:54</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
