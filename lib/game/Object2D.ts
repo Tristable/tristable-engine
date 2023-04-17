@@ -16,4 +16,9 @@ export class Object2D extends GameObject {
         if (this.parent instanceof Object2D) return this.pos.add(this.parent.globalPos);
         return this.pos;
     }
+
+    set globalPos(pos: Vector2) {
+        if (this.parent instanceof Object2D) this.pos.set(pos.subAssign(this.parent.globalPos));
+        this.pos.set(pos);
+    }
 }

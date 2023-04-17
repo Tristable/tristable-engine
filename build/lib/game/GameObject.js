@@ -40,7 +40,9 @@ class GameObject {
     static getGameObjectByID(id) {
         return GameObject.cache.get(id) ?? null;
     }
+    /** Built-in functionality of the `GameObject` called on preload. */
     async objectPreload() { }
+    /** Calls everything that happens on preload. */
     async preload() {
         await this.objectPreload();
         for (const i of this.#children)
@@ -48,7 +50,9 @@ class GameObject {
         for (const i of this.#preloadHandlers)
             await i();
     }
+    /** Built-in functionality of the `GameObject` called on ready. */
     objectReady() { }
+    /** Calls everything that happens on ready. */
     ready() {
         this.objectReady();
         for (const i of this.#children)
@@ -56,7 +60,9 @@ class GameObject {
         for (const i of this.#readyHandlers)
             i();
     }
+    /** Built-in functionality of the `GameObject` called on update. */
     objectUpdate(delta) { }
+    /** Calls everything that happens on update. */
     update(delta) {
         this.objectUpdate(delta);
         for (const i of this.#children)
@@ -64,7 +70,9 @@ class GameObject {
         for (const i of this.#updateHandlers)
             i(delta);
     }
+    /** Built-in functionality of the `GameObject` called on draw. */
     objectDraw(delta) { }
+    /** Calls everything that happens on draw. */
     draw(delta) {
         this.objectDraw(delta);
         for (const i of this.#children)
@@ -72,18 +80,22 @@ class GameObject {
         for (const i of this.#drawHandlers)
             i(delta);
     }
+    /** Adds a child `GameObject` to this `GameObject`. */
     async addChild(child) {
         child.parent = this;
         await child.preload();
         this.#children.push(child);
         child.ready();
     }
+    /** Gets a child by its index in the array of children. */
     getChildByIndex(idx) {
         return this.#children[idx] ?? null;
     }
+    /** Gets a child by its `id` property. */
     getChildByID(id) {
         return this.#children.find((v) => v.id == id) ?? null;
     }
+    /** Gets a child by its `name` property. */
     getChildByName(name) {
         return this.#children.find((v) => v.name == name) ?? null;
     }

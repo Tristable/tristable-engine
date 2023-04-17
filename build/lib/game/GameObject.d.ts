@@ -22,16 +22,28 @@ export declare class GameObject {
     onDraw(f: (delta: number) => void): void;
     /** Gets a `GameObject` from `GameObject.cache` by its `id`. Returns `null` if the object is not found. */
     static getGameObjectByID(id: number): GameObject | null;
+    /** Built-in functionality of the `GameObject` called on preload. */
     objectPreload(): Promise<void>;
+    /** Calls everything that happens on preload. */
     preload(): Promise<void>;
+    /** Built-in functionality of the `GameObject` called on ready. */
     objectReady(): void;
+    /** Calls everything that happens on ready. */
     ready(): void;
+    /** Built-in functionality of the `GameObject` called on update. */
     objectUpdate(delta: number): void;
+    /** Calls everything that happens on update. */
     update(delta: number): void;
+    /** Built-in functionality of the `GameObject` called on draw. */
     objectDraw(delta: number): void;
+    /** Calls everything that happens on draw. */
     draw(delta: number): void;
+    /** Adds a child `GameObject` to this `GameObject`. */
     addChild(child: GameObject): Promise<void>;
+    /** Gets a child by its index in the array of children. */
     getChildByIndex(idx: number): GameObject | null;
+    /** Gets a child by its `id` property. */
     getChildByID(id: number): GameObject | null;
+    /** Gets a child by its `name` property. */
     getChildByName(name: string): GameObject | null;
 }

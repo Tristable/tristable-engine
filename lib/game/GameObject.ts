@@ -52,38 +52,47 @@ export class GameObject {
         return GameObject.cache.get(id) ?? null;
     }
 
+    /** Built-in functionality of the `GameObject` called on preload. */
     async objectPreload(): Promise<void> {}
 
+    /** Calls everything that happens on preload. */
     async preload(): Promise<void> {
         await this.objectPreload();
         for (const i of this.#children) await i.preload();
         for (const i of this.#preloadHandlers) await i();
     }
 
+    /** Built-in functionality of the `GameObject` called on ready. */
     objectReady(): void {}
 
+    /** Calls everything that happens on ready. */
     ready(): void {
         this.objectReady();
         for (const i of this.#children) i.ready();
         for (const i of this.#readyHandlers) i();
     }
 
+    /** Built-in functionality of the `GameObject` called on update. */
     objectUpdate(delta: number): void {}
 
+    /** Calls everything that happens on update. */
     update(delta: number): void {
         this.objectUpdate(delta);
         for (const i of this.#children) i.update(delta);
         for (const i of this.#updateHandlers) i(delta);
     }
     
+    /** Built-in functionality of the `GameObject` called on draw. */
     objectDraw(delta: number): void {}
 
+    /** Calls everything that happens on draw. */
     draw(delta: number): void {
         this.objectDraw(delta);
         for (const i of this.#children) i.draw(delta);
         for (const i of this.#drawHandlers) i(delta);
     }
 
+    /** Adds a child `GameObject` to this `GameObject`. */
     async addChild(child: GameObject): Promise<void> {
         child.parent = this;
         await child.preload();
@@ -91,14 +100,17 @@ export class GameObject {
         child.ready();
     }
 
+    /** Gets a child by its index in the array of children. */
     getChildByIndex(idx: number): GameObject | null {
         return this.#children[idx] ?? null;
     }
 
+    /** Gets a child by its `id` property. */
     getChildByID(id: number): GameObject | null {
         return this.#children.find((v) => v.id == id) ?? null;
     }
 
+    /** Gets a child by its `name` property. */
     getChildByName(name: string): GameObject | null {
         return this.#children.find((v) => v.name == name) ?? null;
     }

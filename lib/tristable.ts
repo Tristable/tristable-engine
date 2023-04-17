@@ -51,3 +51,6 @@ export { GameObject };
 
 import { sceneRoot, makeSceneRoot } from "./game/scene.js";
 export { sceneRoot, makeSceneRoot };
+
+import { Object2D } from "./game/Object2D.js";
+export { Object2D };
