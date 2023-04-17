@@ -72,11 +72,11 @@ export class Vector2 {
         this.y -= v.y;
         return this;
     }
-    /** Scales the `Vector2` by a number. Creates a new `Vector2` and does not modify the original `Vector2`. */
+    /** Scales the `Vector2` by a scale factor. Creates a new `Vector2` and does not modify the original `Vector2`. */
     scale(f) {
         return new Vector2(this.x * f, this.y * f);
     }
-    /** Scales the `Vector2` by a number. Modifies the original `Vector2`. */
+    /** Scales the `Vector2` by a scale factor. Modifies the original `Vector2`. */
     scaleAssign(f) {
         this.x *= f;
         this.y *= f;

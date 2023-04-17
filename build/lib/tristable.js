@@ -30,8 +30,6 @@ import { Texture } from "./render/Texture.js";
 export { Texture };
 import { loadTexture, getTexture } from "./core/resource.js";
 export { loadTexture, getTexture };
-import { Component } from "./game/Component.js";
-export { Component };
 import { GameObject } from "./game/GameObject.js";
 export { GameObject };
 import { sceneRoot, makeSceneRoot } from "./game/scene.js";

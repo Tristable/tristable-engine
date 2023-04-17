@@ -57,9 +57,9 @@ export declare class Vector2 implements Point {
     sub(v: Point): Vector2;
     /** Subtracts a point from the `Vector2`. Modifies the original `Vector2`. */
     subAssign(v: Point): Vector2;
-    /** Scales the `Vector2` by a number. Creates a new `Vector2` and does not modify the original `Vector2`. */
+    /** Scales the `Vector2` by a scale factor. Creates a new `Vector2` and does not modify the original `Vector2`. */
     scale(f: number): Vector2;
-    /** Scales the `Vector2` by a number. Modifies the original `Vector2`. */
+    /** Scales the `Vector2` by a scale factor. Modifies the original `Vector2`. */
     scaleAssign(f: number): Vector2;
     /** Rotates the `Vector2` around the origin by a clockwise angle in radians. Creates a new `Vector2` and does not modify the original `Vector2`. */
     rotate(rad: number): Vector2;
