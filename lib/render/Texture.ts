@@ -1,4 +1,5 @@
 import { Rect2 } from "../math/Rect2.js";
+import { Vector2 } from "../math/Vector2.js";
 
 export class Texture {
     src: CanvasImageSource;
@@ -19,5 +20,9 @@ export class Texture {
                 rj(e);
             });
         });
+    }
+
+    static generateEmpty(size: Vector2) {
+        return new Texture(new OffscreenCanvas(size.x, size.y));
     }
 }

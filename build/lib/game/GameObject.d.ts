@@ -11,7 +11,7 @@ export declare class GameObject {
     name: string;
     /** The parent of a `GameObject` in the scene tree. If the object has no parent or is not in the scene tree, this value is `null` */
     parent: GameObject | null;
-    constructor(name: string);
+    constructor(name: string, children?: GameObject[]);
     /** Adds a function to be called on preload. If the object is added to the scene after the game loads, it will be called right before the object is added. */
     onPreload(f: () => void | Promise<void>): void;
     /** Adds a function to be called on ready. If the object is added to the scene after the game loads, it will be called right after the object is added. */
@@ -22,19 +22,31 @@ export declare class GameObject {
     onDraw(f: (delta: number) => void): void;
     /** Gets a `GameObject` from `GameObject.cache` by its `id`. Returns `null` if the object is not found. */
     static getGameObjectByID(id: number): GameObject | null;
-    /** Built-in functionality of the `GameObject` called on preload. */
+    /** Built-in functionality of the `GameObject` called on preload.
+     *
+     * When extending `GameObject`, `super.objectPreload()` must be called when overriding this.
+     */
     objectPreload(): Promise<void>;
     /** Calls everything that happens on preload. */
     preload(): Promise<void>;
-    /** Built-in functionality of the `GameObject` called on ready. */
+    /** Built-in functionality of the `GameObject` called on ready.
+     *
+     * When extending `GameObject`, `super.objectReady()` must be called when overriding this.
+     */
     objectReady(): void;
     /** Calls everything that happens on ready. */
     ready(): void;
-    /** Built-in functionality of the `GameObject` called on update. */
+    /** Built-in functionality of the `GameObject` called on update.
+     *
+     * When extending `GameObject`, `super.objectUpdate(delta)` must be called when overriding this.
+     */
     objectUpdate(delta: number): void;
     /** Calls everything that happens on update. */
     update(delta: number): void;
-    /** Built-in functionality of the `GameObject` called on draw. */
+    /** Built-in functionality of the `GameObject` called on draw.
+     *
+     * When extending `GameObject`, `super.objectDraw(delta)` must be called when overriding this.
+     */
     objectDraw(delta: number): void;
     /** Calls everything that happens on draw. */
     draw(delta: number): void;

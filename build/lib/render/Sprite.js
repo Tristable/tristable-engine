@@ -12,15 +12,11 @@ export class Sprite {
         this.rect = rect;
     }
     draw() {
-        const { pos, size } = this.config.ignoreCamera ? this.rect : this.rect.screen;
-        const { x, y } = pos;
-        const { x: w, y: h } = size;
+        const { pos: { x, y }, size: { x: w, y: h } } = this.config.ignoreCamera ? this.rect : this.rect.screen;
         ctx.imageSmoothingEnabled = this.config.antialiasing;
         if (this.texture.partition == undefined)
             return ctx.drawImage(this.texture.src, x, y, w, h);
-        const { pos: partitionPos, size: partitionSize } = this.texture.partition;
-        const { x: px, y: py } = partitionPos;
-        const { x: pw, y: ph } = partitionSize;
+        const { pos: { x: px, y: py }, size: { x: pw, y: ph } } = this.texture.partition;
         return ctx.drawImage(this.texture.src, px, py, pw, ph, x, y, w, h);
     }
 }

@@ -16,4 +16,7 @@ export class Texture {
             });
         });
     }
+    static generateEmpty(size) {
+        return new Texture(new OffscreenCanvas(size.x, size.y));
+    }
 }

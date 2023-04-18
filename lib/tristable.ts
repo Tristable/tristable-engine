@@ -54,3 +54,12 @@ export { sceneRoot, makeSceneRoot };
 
 import { Object2D } from "./game/Object2D.js";
 export { Object2D };
+
+import { TristableError } from "./core/TristableError.js";
+export { TristableError };
+
+import { SpriteObject } from "./game/SpriteObject.js";
+export { SpriteObject };
+
+import { treeSetupHandlers, onTreeSetup } from "./core/treeSetup.js";
+export { treeSetupHandlers, onTreeSetup };

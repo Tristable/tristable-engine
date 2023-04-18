@@ -15,10 +15,13 @@ class GameObject {
     #readyHandlers = new Set();
     #updateHandlers = new Set();
     #drawHandlers = new Set();
-    constructor(name) {
+    constructor(name, children) {
         this.name = name;
         this.id = GameObject.nextFreeID++;
         GameObject.cache.set(this.id, this);
+        if (children != undefined)
+            for (const i of children)
+                this.addChild(i);
     }
     /** Adds a function to be called on preload. If the object is added to the scene after the game loads, it will be called right before the object is added. */
     onPreload(f) {
@@ -40,7 +43,10 @@ class GameObject {
     static getGameObjectByID(id) {
         return GameObject.cache.get(id) ?? null;
     }
-    /** Built-in functionality of the `GameObject` called on preload. */
+    /** Built-in functionality of the `GameObject` called on preload.
+     *
+     * When extending `GameObject`, `super.objectPreload()` must be called when overriding this.
+     */
     async objectPreload() { }
     /** Calls everything that happens on preload. */
     async preload() {
@@ -50,7 +56,10 @@ class GameObject {
         for (const i of this.#preloadHandlers)
             await i();
     }
-    /** Built-in functionality of the `GameObject` called on ready. */
+    /** Built-in functionality of the `GameObject` called on ready.
+     *
+     * When extending `GameObject`, `super.objectReady()` must be called when overriding this.
+     */
     objectReady() { }
     /** Calls everything that happens on ready. */
     ready() {
@@ -60,7 +69,10 @@ class GameObject {
         for (const i of this.#readyHandlers)
             i();
     }
-    /** Built-in functionality of the `GameObject` called on update. */
+    /** Built-in functionality of the `GameObject` called on update.
+     *
+     * When extending `GameObject`, `super.objectUpdate(delta)` must be called when overriding this.
+     */
     objectUpdate(delta) { }
     /** Calls everything that happens on update. */
     update(delta) {
@@ -70,7 +82,10 @@ class GameObject {
         for (const i of this.#updateHandlers)
             i(delta);
     }
-    /** Built-in functionality of the `GameObject` called on draw. */
+    /** Built-in functionality of the `GameObject` called on draw.
+     *
+     * When extending `GameObject`, `super.objectDraw(delta)` must be called when overriding this.
+     */
     objectDraw(delta) { }
     /** Calls everything that happens on draw. */
     draw(delta) {

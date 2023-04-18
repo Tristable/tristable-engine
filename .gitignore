@@ -1,8 +1,7 @@
-/*
-
-!lib/
-!*.json
-!.gitignore
-!build/lib
-!.gitattributes
-!docs/
+build/*.*
+build/*.*
+node_modules/
+*.cmd
+*.txt
+*.png
+index.*
