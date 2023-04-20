@@ -63,3 +63,6 @@ export { SpriteObject };
 
 import { treeSetupHandlers, onTreeSetup } from "./core/treeSetup.js";
 export { treeSetupHandlers, onTreeSetup };
+
+import { CameraObject } from "./game/CameraObject.js";
+export { CameraObject };

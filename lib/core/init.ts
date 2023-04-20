@@ -11,7 +11,7 @@ export async function init(): Promise<void> {
 
     document.body.appendChild(realCanvas);
 
-    for (const i of treeSetupHandlers) i();
+    for (const i of treeSetupHandlers) await i();
 
     sceneRoot.ready();
     startLoops();

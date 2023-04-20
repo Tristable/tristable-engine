@@ -8,12 +8,13 @@ export class Camera {
     zmax: number;
     #id: number = Math.random();
 
-    constructor(zmin: number, zmax: number) {
+    constructor(zmin: number, zmax: number, current?: boolean) {
         this.zmin = zmin;
         this.zmax = zmax;
+        if (current) this.current = true;
     }
 
-    get id() {
+    get id(): number {
         return this.#id;
     }
 

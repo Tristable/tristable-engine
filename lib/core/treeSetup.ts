@@ -1,5 +1,5 @@
-export const treeSetupHandlers: Set<() => void> = new Set();
+export const treeSetupHandlers: Set<() => void | Promise<void>> = new Set();
 
-export function onTreeSetup(f: () => void): void {
+export function onTreeSetup(f: () => void | Promise<void>): void {
     treeSetupHandlers.add(f);
 }

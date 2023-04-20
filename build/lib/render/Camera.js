@@ -6,9 +6,11 @@ export class Camera {
     zmin;
     zmax;
     #id = Math.random();
-    constructor(zmin, zmax) {
+    constructor(zmin, zmax, current) {
         this.zmin = zmin;
         this.zmax = zmax;
+        if (current)
+            this.current = true;
     }
     get id() {
         return this.#id;

@@ -58,4 +58,8 @@ export declare class GameObject {
     getChildByID(id: number): GameObject | null;
     /** Gets a child by its `name` property. */
     getChildByName(name: string): GameObject | null;
+    /** Set to true when the `GameObject` is added. */
+    set inSceneTree(value: true);
+    removeChild(id: number): void;
+    remove(): void;
 }

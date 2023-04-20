@@ -53,7 +53,7 @@ export class Action {
         let pressed = false;
 
         for (const i of this.#events) {
-            const eventPressed: boolean | null = (() => {
+            const eventPressed: boolean | null = ((): boolean | null => {
                 if (i.type == ActionEventType.MouseMovement) return input.mouseDelta.distSquared != 0;
                 if (i.type == ActionEventType.MouseButton) return input.isMouseDown(i.button);
                 if (i.type == ActionEventType.MouseWheel) return i.direction == WheelDirection.Down ? input.scrollDelta > 0 : input.scrollDelta < 0;
@@ -73,7 +73,7 @@ export class Action {
         let pressed = true;
 
         for (const i of this.events) {
-            const eventPressed: boolean | null = (() => {
+            const eventPressed: boolean | null = ((): boolean | null => {
                 if (i.type == ActionEventType.MouseMovement) return input.mouseDelta.distSquared != 0;
                 if (i.type == ActionEventType.MouseButton) return input.isMouseJustPressed(i.button);
                 if (i.type == ActionEventType.MouseWheel) return input.scrollDelta != 0;

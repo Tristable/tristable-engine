@@ -41,6 +41,16 @@
         ],
         "@typescript-eslint/no-this-alias": [
             "off"
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+            "error"
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": [
+            "error"
+        ],
+        "comma-dangle": "off",
+        "@typescript-eslint/comma-dangle": [
+            "error"
         ]
     }
 }

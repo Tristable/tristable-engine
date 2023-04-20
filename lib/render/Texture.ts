@@ -22,7 +22,7 @@ export class Texture {
         });
     }
 
-    static generateEmpty(size: Vector2) {
+    static generateEmpty(size: Vector2): Texture {
         return new Texture(new OffscreenCanvas(size.x, size.y));
     }
 }

@@ -10,7 +10,7 @@ export async function init() {
         await i();
     document.body.appendChild(realCanvas);
     for (const i of treeSetupHandlers)
-        i();
+        await i();
     sceneRoot.ready();
     startLoops();
 }

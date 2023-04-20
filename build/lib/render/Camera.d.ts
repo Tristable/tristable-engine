@@ -4,7 +4,7 @@ export declare class Camera {
     pos: Vector2;
     zmin: number;
     zmax: number;
-    constructor(zmin: number, zmax: number);
+    constructor(zmin: number, zmax: number, current?: boolean);
     get id(): number;
     static get default(): Camera;
     set zoom(z: number);

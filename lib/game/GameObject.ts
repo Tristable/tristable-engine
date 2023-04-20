@@ -1,3 +1,5 @@
+import { TristableError } from "../core/TristableError.js";
+
 /** A blank game object that can be added to the scene tree. */
 export class GameObject {
     /** The next `id` available for a `GameObject` */
@@ -20,6 +22,7 @@ export class GameObject {
     #readyHandlers: Set<() => void> = new Set();
     #updateHandlers: Set<(delta: number) => void> = new Set();
     #drawHandlers: Set<(delta: number) => void> = new Set();
+    #inSceneTree = false;
 
     constructor(name: string, children?: GameObject[]) {
         this.name = name;
@@ -62,21 +65,23 @@ export class GameObject {
     /** Calls everything that happens on preload. */
     async preload(): Promise<void> {
         await this.objectPreload();
-        for (const i of this.#children) await i.preload();
         for (const i of this.#preloadHandlers) await i();
+        for (const i of this.#children) await i.preload();
     }
 
     /** Built-in functionality of the `GameObject` called on ready.
      * 
      * When extending `GameObject`, `super.objectReady()` must be called when overriding this.
      */
-    objectReady(): void {}
+    objectReady(): void {
+        this.inSceneTree = true;
+    }
 
     /** Calls everything that happens on ready. */
     ready(): void {
         this.objectReady();
-        for (const i of this.#children) i.ready();
         for (const i of this.#readyHandlers) i();
+        for (const i of this.#children) i.ready();
     }
 
     /** Built-in functionality of the `GameObject` called on update.
@@ -88,8 +93,8 @@ export class GameObject {
     /** Calls everything that happens on update. */
     update(delta: number): void {
         this.objectUpdate(delta);
-        for (const i of this.#children) i.update(delta);
         for (const i of this.#updateHandlers) i(delta);
+        for (const i of this.#children) i.update(delta);
     }
     
     /** Built-in functionality of the `GameObject` called on draw.
@@ -101,8 +106,8 @@ export class GameObject {
     /** Calls everything that happens on draw. */
     draw(delta: number): void {
         this.objectDraw(delta);
-        for (const i of this.#children) i.draw(delta);
         for (const i of this.#drawHandlers) i(delta);
+        for (const i of this.#children) i.draw(delta);
     }
 
     /** Adds a child `GameObject` to this `GameObject`. */
@@ -110,7 +115,7 @@ export class GameObject {
         child.parent = this;
         await child.preload();
         this.#children.push(child);
-        child.ready();
+        if (this.#inSceneTree) child.ready();
     }
 
     /** Gets a child by its index in the array of children. */
@@ -126,5 +131,19 @@ export class GameObject {
     /** Gets a child by its `name` property. */
     getChildByName(name: string): GameObject | null {
         return this.#children.find((v) => v.name == name) ?? null;
+    }
+
+    /** Set to true when the `GameObject` is added. */
+    set inSceneTree(value: true) {
+        this.#inSceneTree = value;
+    }
+
+    removeChild(id: number): void {
+        this.#children.splice(this.#children.findIndex((v) => v.id == id), 1);
+    }
+
+    remove(): void {
+        if (this.parent == undefined) throw new TristableError("Cannot remove a GameObject without a parent.");
+        this.parent.removeChild(this.id);
     }
 }
