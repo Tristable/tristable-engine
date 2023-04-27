@@ -88,10 +88,22 @@ export class Rect2 {
         const b2 = rect.bounds;
         const closestXDist = Math.min(Math.abs(b1.left - b2.left), Math.abs(b1.left - b2.right), Math.abs(b1.right - b2.left), Math.abs(b1.right - b2.right));
         const closestYDist = Math.min(Math.abs(b1.top - b2.top), Math.abs(b1.top - b2.bottom), Math.abs(b1.bottom - b2.top), Math.abs(b1.bottom - b2.bottom));
+        const xIntersection = b1.left < b2.right && b1.right > b2.left;
+        const yIntersection = b1.top < b2.bottom && b1.bottom > b2.top;
+        const leftSpace = yIntersection && b1.left >= b2.right ? Math.abs(b1.left - b2.right) : Infinity;
+        const rightSpace = yIntersection && b1.right <= b2.left ? Math.abs(b1.right - b2.left) : Infinity;
+        const topSpace = xIntersection && b1.top >= b2.bottom ? Math.abs(b1.top - b2.bottom) : Infinity;
+        const bottomSpace = xIntersection && b1.bottom <= b2.top ? Math.abs(b1.bottom - b2.top) : Infinity;
         return {
-            overlapping: this.overlap(rect),
+            overlapping: xIntersection || yIntersection,
             closestXDist,
-            closestYDist
+            closestYDist,
+            leftSpace,
+            rightSpace,
+            topSpace,
+            bottomSpace,
+            xIntersection,
+            yIntersection
         };
     }
     /** Converts the `Rect2` from world coordinates to screen coordinates using the `currentCamera`. */

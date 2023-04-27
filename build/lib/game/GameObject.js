@@ -28,18 +28,22 @@ class GameObject {
     /** Adds a function to be called on preload. If the object is added to the scene after the game loads, it will be called right before the object is added. */
     onPreload(f) {
         this.#preloadHandlers.add(f);
+        return this;
     }
     /** Adds a function to be called on ready. If the object is added to the scene after the game loads, it will be called right after the object is added. */
     onReady(f) {
         this.#readyHandlers.add(f);
+        return this;
     }
     /** Adds a function to be called on update. */
     onUpdate(f) {
         this.#updateHandlers.add(f);
+        return this;
     }
     /** Adds a function to be called on draw. */
     onDraw(f) {
         this.#drawHandlers.add(f);
+        return this;
     }
     /** Gets a `GameObject` from `GameObject.cache` by its `id`. Returns `null` if the object is not found. */
     static getGameObjectByID(id) {
@@ -123,13 +127,27 @@ class GameObject {
     set inSceneTree(value) {
         this.#inSceneTree = value;
     }
+    /** Removes a child from the scene tree.*/
     removeChild(id) {
         this.#children.splice(this.#children.findIndex((v) => v.id == id), 1);
     }
+    /** Removes the `GameObject` from the scene tree. The `GameObject` must have a parent. */
     remove() {
         if (this.parent == undefined)
             throw new TristableError("Cannot remove a GameObject without a parent.");
         this.parent.removeChild(this.id);
+    }
+    /** A list of the `GameObject` and every descendant of the `GameObject` */
+    get allNodes() {
+        const res = [
+            this
+        ];
+        for (const i of this.#children)
+            res.push(...i.allNodes);
+        return res;
+    }
+    get children() {
+        return this.#children;
     }
 }
 export { GameObject };

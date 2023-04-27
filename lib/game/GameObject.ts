@@ -1,4 +1,5 @@
 import { TristableError } from "../core/TristableError.js";
+import { Collider } from "./Collider.js";
 
 /** A blank game object that can be added to the scene tree. */
 export class GameObject {
@@ -32,23 +33,27 @@ export class GameObject {
     }
 
     /** Adds a function to be called on preload. If the object is added to the scene after the game loads, it will be called right before the object is added. */
-    onPreload(f: () => void | Promise<void>): void {
+    onPreload(f: () => void | Promise<void>): this {
         this.#preloadHandlers.add(f);
+        return this;
     }
 
     /** Adds a function to be called on ready. If the object is added to the scene after the game loads, it will be called right after the object is added. */
-    onReady(f: () => void): void {
+    onReady(f: () => void): this {
         this.#readyHandlers.add(f);
+        return this;
     }
 
     /** Adds a function to be called on update. */
-    onUpdate(f: (delta: number) => void): void {
+    onUpdate(f: (delta: number) => void): this {
         this.#updateHandlers.add(f);
+        return this;
     }
 
     /** Adds a function to be called on draw. */
-    onDraw(f: (delta: number) => void): void {
+    onDraw(f: (delta: number) => void): this {
         this.#drawHandlers.add(f);
+        return this;
     }
 
     /** Gets a `GameObject` from `GameObject.cache` by its `id`. Returns `null` if the object is not found. */
@@ -138,12 +143,29 @@ export class GameObject {
         this.#inSceneTree = value;
     }
 
+    /** Removes a child from the scene tree.*/
     removeChild(id: number): void {
         this.#children.splice(this.#children.findIndex((v) => v.id == id), 1);
     }
 
+    /** Removes the `GameObject` from the scene tree. The `GameObject` must have a parent. */
     remove(): void {
         if (this.parent == undefined) throw new TristableError("Cannot remove a GameObject without a parent.");
         this.parent.removeChild(this.id);
+    }
+
+    /** A list of the `GameObject` and every descendant of the `GameObject` */
+    get allNodes(): GameObject[] {
+        const res: GameObject[] = [
+            this
+        ];
+
+        for (const i of this.#children) res.push(...i.allNodes);
+
+        return res;
+    }
+
+    get children(): GameObject[] {
+        return this.#children;
     }
 }

@@ -66,3 +66,12 @@ export { treeSetupHandlers, onTreeSetup };
 
 import { CameraObject } from "./game/CameraObject.js";
 export { CameraObject };
+
+import { MovingObject } from "./game/MovingObject.js";
+export { MovingObject };
+
+import { RectObject } from "./game/RectObject.js";
+export { RectObject };
+
+import { Collider, MaximumDistanceInfo } from "./game/Collider.js";
+export { Collider, MaximumDistanceInfo };

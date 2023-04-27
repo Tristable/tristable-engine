@@ -8,13 +8,12 @@ import { GameObject } from "./GameObject.js";
 export declare class SpriteObject extends Object2D {
     /** The texture for the `SpriteObject` to render. */
     texture: Texture;
-    /** The display size for the `SpriteObject`. */
-    size: Vector2;
     /** The configuration for the resulting `Sprite`. */
     spriteConfig: SpriteConfig;
-    constructor(name: string, texture: Texture, pos: Vector2, size: Vector2, spriteConfig?: SpriteConfig, children?: GameObject[]);
-    /** The rectangle that the sprite is drawn inside. */
-    set rect(rect: Rect2);
-    get rect(): Rect2;
+    /** The rectangle for the `Sprite` to be drawn in. Position is the offset from the `globalPos` of the `SpriteObject`. */
+    rect: Rect2;
+    constructor(name: string, texture: Texture, rect: Rect2, pos?: Vector2, spriteConfig?: SpriteConfig, children?: GameObject[]);
+    /** The rectangle for the `Sprite` to be drawn in global space. */
+    get globalRect(): Rect2;
     objectDraw(delta: number): void;
 }

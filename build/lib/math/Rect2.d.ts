@@ -23,6 +23,18 @@ export interface RectComparisonData {
     closestXDist: number;
     /** The shortest distance between horizontal (top/bottom) edges of the two AABB's */
     closestYDist: number;
+    /** The distance between the left of the AABB and the right of the other AABB */
+    leftSpace: number;
+    /** The distance between the right of the AABB and the left of the other AABB */
+    rightSpace: number;
+    /** The distance between the top of the AABB and the bottom of the other AABB */
+    topSpace: number;
+    /** The distance between the bottom of the AABB and the top of the other AABB */
+    bottomSpace: number;
+    /** Whether or not the two AABBs are insersecting in the x direction. */
+    xIntersection: boolean;
+    /** Whether or not the two AABBs are insersecting in the y direction. */
+    yIntersection: boolean;
     /** Whether or not the two AABB's intersecting area is positive. */
     overlapping: boolean;
 }
@@ -38,7 +50,7 @@ export declare class Rect2 implements Rectangle {
     /** Returns a copy of the `Rect2`. Also clones properties. */
     get copy(): Rect2;
     /** Sets the position and size of the `Rect2` to another `Rect2`. */
-    set(r: Rect2): this;
+    set(r: Rect2): Rect2;
     /** Translates the `Rect2` by a point. Creates a new `Rect2` and does not modify the original `Rect2`. */
     translate(v: Point): Rect2;
     /** Translates the `Rect2` by a point. Modifies the original `Rect2`. */

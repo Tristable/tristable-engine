@@ -33,6 +33,24 @@ export interface RectComparisonData {
     /** The shortest distance between horizontal (top/bottom) edges of the two AABB's */
     closestYDist: number;
 
+    /** The distance between the left of the AABB and the right of the other AABB */
+    leftSpace: number;
+
+    /** The distance between the right of the AABB and the left of the other AABB */
+    rightSpace: number;
+
+    /** The distance between the top of the AABB and the bottom of the other AABB */
+    topSpace: number;
+
+    /** The distance between the bottom of the AABB and the top of the other AABB */
+    bottomSpace: number;
+
+    /** Whether or not the two AABBs are insersecting in the x direction. */
+    xIntersection: boolean;
+
+    /** Whether or not the two AABBs are insersecting in the y direction. */
+    yIntersection: boolean;
+
     /** Whether or not the two AABB's intersecting area is positive. */
     overlapping: boolean;
 }
@@ -61,7 +79,7 @@ export class Rect2 implements Rectangle {
     }
     
     /** Sets the position and size of the `Rect2` to another `Rect2`. */
-    set(r: Rect2) {
+    set(r: Rect2): Rect2 {
         this.pos = r.pos;
         this.size = r.size;
         return this;
@@ -156,10 +174,24 @@ export class Rect2 implements Rectangle {
             Math.abs(b1.bottom - b2.bottom)
         );
 
+        const xIntersection: boolean = b1.left < b2.right && b1.right > b2.left;
+        const yIntersection: boolean = b1.top < b2.bottom && b1.bottom > b2.top;
+
+        const leftSpace: number = yIntersection && b1.left >= b2.right ? Math.abs(b1.left - b2.right) : Infinity;
+        const rightSpace: number = yIntersection && b1.right <= b2.left ? Math.abs(b1.right - b2.left) : Infinity;
+        const topSpace: number = xIntersection && b1.top >= b2.bottom ? Math.abs(b1.top - b2.bottom) : Infinity;
+        const bottomSpace: number = xIntersection && b1.bottom <= b2.top ? Math.abs(b1.bottom - b2.top) : Infinity;
+
         return {
-            overlapping: this.overlap(rect),
+            overlapping: xIntersection || yIntersection,
             closestXDist,
-            closestYDist
+            closestYDist,
+            leftSpace,
+            rightSpace,
+            topSpace,
+            bottomSpace,
+            xIntersection,
+            yIntersection
         };
     }
 

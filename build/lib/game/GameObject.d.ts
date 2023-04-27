@@ -13,13 +13,13 @@ export declare class GameObject {
     parent: GameObject | null;
     constructor(name: string, children?: GameObject[]);
     /** Adds a function to be called on preload. If the object is added to the scene after the game loads, it will be called right before the object is added. */
-    onPreload(f: () => void | Promise<void>): void;
+    onPreload(f: () => void | Promise<void>): this;
     /** Adds a function to be called on ready. If the object is added to the scene after the game loads, it will be called right after the object is added. */
-    onReady(f: () => void): void;
+    onReady(f: () => void): this;
     /** Adds a function to be called on update. */
-    onUpdate(f: (delta: number) => void): void;
+    onUpdate(f: (delta: number) => void): this;
     /** Adds a function to be called on draw. */
-    onDraw(f: (delta: number) => void): void;
+    onDraw(f: (delta: number) => void): this;
     /** Gets a `GameObject` from `GameObject.cache` by its `id`. Returns `null` if the object is not found. */
     static getGameObjectByID(id: number): GameObject | null;
     /** Built-in functionality of the `GameObject` called on preload.
@@ -60,6 +60,11 @@ export declare class GameObject {
     getChildByName(name: string): GameObject | null;
     /** Set to true when the `GameObject` is added. */
     set inSceneTree(value: true);
+    /** Removes a child from the scene tree.*/
     removeChild(id: number): void;
+    /** Removes the `GameObject` from the scene tree. The `GameObject` must have a parent. */
     remove(): void;
+    /** A list of the `GameObject` and every descendant of the `GameObject` */
+    get allNodes(): GameObject[];
+    get children(): GameObject[];
 }
