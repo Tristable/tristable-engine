@@ -30,6 +30,7 @@ export class Collider extends Object2D {
         return sceneRoot.allNodes.filter((v) => v instanceof Collider) as Collider[];
     }
 
+    /** Returns the `MaximumDistanceInfo` for this collider, based on every `Collider` in the scene tree. */
     get maxDistInfo(): MaximumDistanceInfo {
         const data: RectComparisonData[] = this.allColliders.filter((v) => v.id != this.id).map((v) => this.globalRect.comparisonData(v.globalRect));
 

@@ -5,7 +5,7 @@
     "main": "build/lib/tristable.js",
     "types": "build/lib/tristable.d.ts",
     "type": "module",
-    "keywords": ["tristable", "game", "engine", "javascript", "js", "typescript", "ts", "browser", "web"],
+    "keywords": ["tristable", "game", "engine", "javascript", "js", "typescript", "ts", "browser", "web", "game-engine"],
     "contributors": [
         {
             "name": "TrueSunGaming",

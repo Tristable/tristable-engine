@@ -36,4 +36,25 @@ export class MovingObject extends Object2D {
         super.objectUpdate(delta);
         if (this.moveEveryFrame) this.move(delta);
     }
+
+    /** Whether or not the `MovingObject`'s `collider` is touching another `Collider` below it. */
+    get onFloor(): boolean {
+        const max: MaximumDistanceInfo | undefined = this.collider?.maxDistInfo;
+        if (max == undefined) return false;
+        return max.posy == 0;
+    }
+
+    /** Whether or not the `MovingObject`'s `collider` is touching another `Collider` to the left or right of it. */
+    get onWall(): boolean {
+        const max: MaximumDistanceInfo | undefined = this.collider?.maxDistInfo;
+        if (max == undefined) return false;
+        return max.posx == 0 || max.negx == 0;
+    }
+
+    /** Whether or not the `MovingObject`'s `collider` is touching another `Collider` above it. */
+    get onCeil(): boolean {
+        const max: MaximumDistanceInfo | undefined = this.collider?.maxDistInfo;
+        if (max == undefined) return false;
+        return max.negy == 0;
+    }
 }
