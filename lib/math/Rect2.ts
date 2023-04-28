@@ -183,7 +183,7 @@ export class Rect2 implements Rectangle {
         const bottomSpace: number = xIntersection && b1.bottom <= b2.top ? Math.abs(b1.bottom - b2.top) : Infinity;
 
         return {
-            overlapping: xIntersection || yIntersection,
+            overlapping: xIntersection && yIntersection,
             closestXDist,
             closestYDist,
             leftSpace,
