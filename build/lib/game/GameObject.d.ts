@@ -66,5 +66,6 @@ export declare class GameObject {
     remove(): void;
     /** A list of the `GameObject` and every descendant of the `GameObject` */
     get allNodes(): GameObject[];
+    /** The direct chilren of this `GameObject` in the scene tree. */
     get children(): GameObject[];
 }

@@ -146,6 +146,7 @@ class GameObject {
             res.push(...i.allNodes);
         return res;
     }
+    /** The direct chilren of this `GameObject` in the scene tree. */
     get children() {
         return this.#children;
     }

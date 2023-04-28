@@ -1,8 +1,13 @@
-import { Rect2 } from "../math/Rect2.js";
-import { Vector2 } from "../math/Vector2.js";
+import { Rect2, Rectangle } from "../math/Rect2.js";
+import { Point, Vector2 } from "../math/Vector2.js";
+import { TristableError } from "../core/TristableError.js";
 
+/** A texture that can be rendered. */
 export class Texture {
+    /** The `CanvasImageSource` for the `Texture` to use. */
     src: CanvasImageSource;
+    
+    /** The portion of the `CanvasImageSource` for the `Texture` to use. Usually used for getting a single texture from a spritesheet. */
     partition?: Rect2;
 
     constructor(src: CanvasImageSource, partition?: Rect2) {
@@ -10,19 +15,64 @@ export class Texture {
         this.partition = partition;
     }
 
-    static loadFromURL(url: string, partition?: Rect2): Promise<Texture> {
-        return new Promise((r: (v: Texture) => void, rj: (r: any) => void) => {
+    /** Loads a single texture from a URL or file path. */
+    static loadFromURL(url: string, partition?: Rect2, fallback?: Texture): Promise<Texture> {
+        return new Promise((r: (v: Texture) => void, rj: (r: ErrorEvent) => void) => {
             const src = new Image();
             src.src = url;
             src.addEventListener("load", () => r(new Texture(src, partition)));
             src.addEventListener("error", (e: ErrorEvent) => {
+                if (!fallback) {
+                    rj(e);
+                    throw new TristableError(`Failed to load image from ${url}`);
+                }
                 console.warn(`Failed to load image from ${url}`);
-                rj(e);
+                r(fallback);
             });
         });
     }
 
-    static generateEmpty(size: Vector2): Texture {
+    /** Loads multiple textures from a single source URL or file path. */
+    static loadSpritesheetFromURL(url: string, partitions: Map<string, Rect2>, fallback?: Texture): Promise<Map<string, Texture>> {
+        return new Promise((r: (v: Map<string, Texture>) => void, rj: (r: ErrorEvent) => void) => {
+            const src = new Image();
+            src.src = url;
+            src.addEventListener("load", () => {
+                const textures: Map<string, Texture> = new Map();
+                for (const [k, v] of partitions) textures.set(k, new Texture(src, v));
+                r(textures);
+            });
+            src.addEventListener("error", (e: ErrorEvent) => {
+                if (!fallback) {
+                    rj(e);
+                    throw new TristableError(`Failed to load image from ${url}`);
+                }
+                console.warn(`Failed to load image from ${url}`);
+                const textures: Map<string, Texture> = new Map();
+                for (const [k] of partitions) textures.set(k, fallback);
+                r(textures);
+            });
+        });
+    }
+
+    /** Loads multiple textures of the same size from a single source URL or file path. */
+    static loadEvenSpritesheetFromURL(url: string, partitionSize: Vector2, partitionPositions: Map<string, Vector2>, fallback?: Texture): Promise<Map<string, Texture>> {
+        const partitions: Map<string, Rect2> = new Map();
+        for (const [k, v] of partitionPositions) partitions.set(k, new Rect2(v, partitionSize));
+        return Texture.loadSpritesheetFromURL(url, partitions, fallback);
+    }
+
+    /** Creates an empty bitmap `Texture` with a certain size. */
+    static generateEmpty(size: Point): Texture {
         return new Texture(new OffscreenCanvas(size.x, size.y));
+    }
+
+    /** Creates a solid color bitmap `Texture` with a certain size and color. */
+    static solidColor(size: Point, color: string): Texture {
+        const ca: OffscreenCanvas = new OffscreenCanvas(size.x, size.y);
+        const c: OffscreenCanvasRenderingContext2D = ca.getContext("2d")!;
+        c.fillStyle = color;
+        c.fillRect(0, 0, size.x, size.y);
+        return new Texture(ca);
     }
 }
