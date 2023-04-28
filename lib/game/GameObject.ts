@@ -57,8 +57,8 @@ export class GameObject {
     }
 
     /** Gets a `GameObject` from `GameObject.cache` by its `id`. Returns `null` if the object is not found. */
-    static getGameObjectByID(id: number): GameObject | null {
-        return GameObject.cache.get(id) ?? null;
+    static getGameObjectByID<T extends GameObject>(id: number): T | null {
+        return GameObject.cache.get(id) as T ?? null;
     }
 
     /** Built-in functionality of the `GameObject` called on preload.
@@ -124,18 +124,18 @@ export class GameObject {
     }
 
     /** Gets a child by its index in the array of children. */
-    getChildByIndex(idx: number): GameObject | null {
-        return this.#children[idx] ?? null;
+    getChildByIndex<T extends GameObject>(idx: number): T | null {
+        return this.#children[idx] as T ?? null;
     }
 
     /** Gets a child by its `id` property. */
-    getChildByID(id: number): GameObject | null {
-        return this.#children.find((v) => v.id == id) ?? null;
+    getChildByID<T extends GameObject>(id: number): T | null {
+        return this.#children.find((v) => v.id == id) as T ?? null;
     }
 
     /** Gets a child by its `name` property. */
-    getChildByName(name: string): GameObject | null {
-        return this.#children.find((v) => v.name == name) ?? null;
+    getChildByName<T extends GameObject>(name: string): T | null {
+        return this.#children.find((v) => v.name == name) as T ?? null;
     }
 
     /** Set to true when the `GameObject` is added. */
