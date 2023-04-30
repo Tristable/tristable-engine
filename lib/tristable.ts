@@ -75,3 +75,6 @@ export { RectObject };
 
 import { Collider, MaximumDistanceInfo } from "./game/Collider.js";
 export { Collider, MaximumDistanceInfo };
+
+import { PhysicsEnvironment, PhysicsObject } from "./game/PhysicsObject.js";
+export { PhysicsEnvironment, PhysicsObject };

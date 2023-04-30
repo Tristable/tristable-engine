@@ -70,9 +70,9 @@ export class Action {
     }
 
     justPressed(input: InputManager): boolean {
-        let pressed = true;
+        let pressed = false;
 
-        for (const i of this.events) {
+        for (const i of this.#events) {
             const eventPressed: boolean | null = ((): boolean | null => {
                 if (i.type == ActionEventType.MouseMovement) return input.mouseDelta.distSquared != 0;
                 if (i.type == ActionEventType.MouseButton) return input.isMouseJustPressed(i.button);
@@ -83,7 +83,7 @@ export class Action {
 
             if (eventPressed == null) continue;
 
-            pressed = pressed && (i.inverted ? !eventPressed : eventPressed);
+            pressed = pressed || (i.inverted ? !eventPressed : eventPressed);
         }
         
         return pressed;
