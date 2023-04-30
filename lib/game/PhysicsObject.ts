@@ -4,11 +4,14 @@ import { MovingObject } from "./MovingObject.js";
 
 /** The environment for `PhysicsObject`s to use. */
 export interface PhysicsEnvironment {
-    /** The gravity to be applied to the y velocity of the `PhysicsObject`. */
+    /** The gravity to be applied to the y velocity of the `PhysicsObject` every update. */
     gravity: number;
 
-    /** The friction to be applied to the x velocity of the `PhysicsObject`. */
+    /** The friction to be applied to the x velocity of the `PhysicsObject` when touching the ground. */
     friction: number;
+
+    /** The air resistance to be applied to the x velocity of the `PhysicsObject` every update. */
+    airResistance: number;
 }
 
 export class PhysicsObject extends MovingObject {
@@ -21,23 +24,31 @@ export class PhysicsObject extends MovingObject {
     /** The maximum absolute x velocity of the `PhysicsObject`. */
     maximumVelocity: number;
 
-    constructor(name: string, env: PhysicsEnvironment, maximumVelocity = Infinity, pos?: Vector2, children?: GameObject[]) {
+    constructor(name: string, env: Partial<PhysicsEnvironment> = {}, maximumVelocity = Infinity, pos?: Vector2, children?: GameObject[]) {
         super(name, true, pos, children);
-        this.env = env;
+        this.env = {
+            gravity: env.gravity ?? 2400,
+            friction: env.friction ?? 0,
+            airResistance: env.airResistance ?? 1000
+        };
         this.maximumVelocity = maximumVelocity;
     }
 
     override objectUpdate(delta: number): void {
         super.objectUpdate(delta);
 
-        if (!this.onWall) {
+        const wall: boolean = this.onWall;
+        const floor: boolean = this.onFloor;
+        const ceil: boolean = this.onCeil;
+
+        if (!wall) {
             this.velocity.x += this.acceleration * delta;
-            if (this.velocity.x > 0) this.velocity.x -= Math.min(this.env.friction * delta, this.velocity.x);
-            if (this.velocity.x < 0) this.velocity.x += Math.min(this.env.friction * delta, -this.velocity.x);
+            if (this.velocity.x > 0) this.velocity.x -= Math.min((this.env.airResistance + (floor ? this.env.friction : 0)) * delta, this.velocity.x);
+            if (this.velocity.x < 0) this.velocity.x += Math.min((this.env.airResistance + (floor ? this.env.friction : 0)) * delta, -this.velocity.x);
             if (Math.abs(this.velocity.x) > this.maximumVelocity) this.velocity.x = this.velocity.x < 0 ? -this.maximumVelocity : this.maximumVelocity;
         } else this.velocity.x = 0;
         
         this.velocity.y += this.env.gravity * delta;
-        if ((this.onFloor && this.velocity.y > 0) || (this.onCeil && this.velocity.y < 0)) this.velocity.y = 0;
+        if ((floor && this.velocity.y > 0) || (ceil && this.velocity.y < 0)) this.velocity.y = 0;
     }
 }

@@ -1,8 +1,10 @@
 import { Rect2, RectComparisonData } from "../math/Rect2.js";
 import { Vector2 } from "../math/Vector2.js";
+import { DrawRect } from "../render/DrawRect.js";
 import { GameObject } from "./GameObject.js";
 import { Object2D } from "./Object2D.js";
 import { sceneRoot } from "./scene.js";
+import { debug } from "../core/debug.js";
 
 export interface MaximumDistanceInfo {
     negx: number;
@@ -45,5 +47,13 @@ export class Collider extends Object2D {
             posx,
             posy
         };
+    }
+
+    override objectDraw(delta: number): void {
+        super.objectDraw(delta);
+        if (debug.visibleColliders) new DrawRect(this.globalRect, {
+            stroke: "blue",
+            strokeWidth: 5
+        }).draw();
     }
 }

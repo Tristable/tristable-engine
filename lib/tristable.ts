@@ -78,3 +78,6 @@ export { Collider, MaximumDistanceInfo };
 
 import { PhysicsEnvironment, PhysicsObject } from "./game/PhysicsObject.js";
 export { PhysicsEnvironment, PhysicsObject };
+
+import { DebugOptions, debug } from "./core/debug.js";
+export { DebugOptions, debug };
