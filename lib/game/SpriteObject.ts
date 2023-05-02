@@ -1,7 +1,7 @@
 import { Texture } from "../render/Texture.js";
 import { Vector2 } from "../math/Vector2.js";
 import { Object2D } from "./Object2D.js";
-import { Sprite, SpriteConfig } from "../render/Sprite.js";
+import { Sprite, SpriteConfig, createSpriteConfig } from "../render/Sprite.js";
 import { Rect2 } from "../math/Rect2.js";
 import { GameObject } from "./GameObject.js";
 
@@ -11,7 +11,7 @@ export class SpriteObject extends Object2D {
     texture: Texture;
 
     /** The configuration for the resulting `Sprite`. */
-    spriteConfig: SpriteConfig;
+    spriteConfig: Required<SpriteConfig>;
 
     /** The rectangle for the `Sprite` to be drawn in. Position is the offset from the `globalPos` of the `SpriteObject`. */
     rect: Rect2;
@@ -20,16 +20,16 @@ export class SpriteObject extends Object2D {
         super(name, pos, children);
         this.texture = texture;
         this.rect = rect;
-        this.spriteConfig = spriteConfig ?? {};
+        this.spriteConfig = createSpriteConfig(spriteConfig ?? {});
     }
 
     /** The rectangle for the `Sprite` to be drawn in global space. */
     get globalRect(): Rect2 {
-        return this.rect.translate(this.pos);
+        return this.rect.translate(this.globalPos);
     }
 
     override objectDraw(delta: number): void {
         super.objectDraw(delta);
-        new Sprite(this.texture, this.rect, this.spriteConfig).draw();
+        new Sprite(this.texture, this.globalRect, this.spriteConfig).draw();
     }
 }

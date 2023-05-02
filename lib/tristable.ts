@@ -31,14 +31,14 @@ export { Action, ActionEvent, ActionEventBase, ActionEventType, MouseButtonActio
 import { Camera, currentCamera } from "./render/Camera.js";
 export { Camera, currentCamera };
 
-import { DrawRect, DrawRectConfig } from "./render/DrawRect.js";
-export { DrawRect, DrawRectConfig };
+import { DrawRect, DrawRectConfig, createDrawRectConfig } from "./render/DrawRect.js";
+export { DrawRect, DrawRectConfig, createDrawRectConfig };
 
 import { DrawText, DrawTextConfig } from "./render/DrawText.js";
 export { DrawText, DrawTextConfig };
 
-import { Sprite, SpriteConfig } from "./render/Sprite.js";
-export { Sprite, SpriteConfig };
+import { Sprite, SpriteConfig, createSpriteConfig } from "./render/Sprite.js";
+export { Sprite, SpriteConfig, createSpriteConfig };
 
 import { Texture } from "./render/Texture.js";
 export { Texture };

@@ -165,7 +165,7 @@ export class GameObject {
         return res;
     }
 
-    /** The direct chilren of this `GameObject` in the scene tree. */
+    /** The direct children of this `GameObject` in the scene tree. */
     get children(): GameObject[] {
         return this.#children;
     }
