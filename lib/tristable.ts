@@ -7,8 +7,8 @@ export { CanvasConfig, canvas, realCanvas, ctx, realCtx, configureCanvas, update
 import { Rectangle, RectBounds, Rect2, RectComparisonData } from "./math/Rect2.js";
 export { Rectangle, RectBounds, Rect2, RectComparisonData };
 
-import { updateLoopHandlers, drawLoopHandlers, onUpdate, onDraw, startLoops } from "./core/loop.js";
-export { updateLoopHandlers, drawLoopHandlers, onUpdate, onDraw, startLoops };
+import { updateLoopHandlers, drawLoopHandlers, onUpdate, onDraw, startLoops, lastDelta, lastDeltas, getFPS } from "./core/loop.js";
+export { updateLoopHandlers, drawLoopHandlers, onUpdate, onDraw, startLoops, lastDelta, lastDeltas, getFPS };
 
 import { preloadHandlers, onPreload } from "./core/preload.js";
 export { preloadHandlers, onPreload };
@@ -79,5 +79,5 @@ export { Collider, MaximumDistanceInfo };
 import { PhysicsEnvironment, PhysicsObject } from "./game/PhysicsObject.js";
 export { PhysicsEnvironment, PhysicsObject };
 
-import { DebugOptions, debug } from "./core/debug.js";
-export { DebugOptions, debug };
+import { DebugOptions, debug, launchDebugger } from "./core/debug.js";
+export { DebugOptions, debug, launchDebugger };

@@ -32,6 +32,28 @@ export class Texture {
         });
     }
 
+    /** Repeats `source` across a texture of size `size` every `repeatSize` units. `source` is scaled to `repeatSize`. */
+    static createTiled(source: Texture, size: Vector2, repeatSize: Vector2): Texture {
+        const oc: OffscreenCanvas = new OffscreenCanvas(size.x, size.y);
+        const c: OffscreenCanvasRenderingContext2D = oc.getContext("2d")!;
+
+        console.log(Math.ceil(size.x / repeatSize.x) * Math.ceil(size.y / repeatSize.y));
+
+        for (let x = 0; x < size.x / repeatSize.x; x++) {
+            for (let y = 0; y < size.y / repeatSize.y; y++) {
+                if (source.partition == undefined) {
+                    c.drawImage(source.src, x * repeatSize.x, y * repeatSize.y, repeatSize.x, repeatSize.y);
+                    continue;
+                }
+
+                const { pos: { x: px, y: py }, size: { x: pw, y: ph } }: Rect2 = source.partition;
+                c.drawImage(source.src, px, py, pw, ph, x * repeatSize.x, y * repeatSize.y, repeatSize.x, repeatSize.y);
+            }
+        }
+
+        return new Texture(oc);
+    }
+
     /** Loads multiple textures from a single source URL or file path. */
     static loadSpritesheetFromURL(url: string, partitions: Map<string, Rect2>, fallback?: Texture): Promise<Map<string, Texture>> {
         return new Promise((r: (v: Map<string, Texture>) => void, rj: (r: ErrorEvent) => void) => {
