@@ -4,3 +4,4 @@ node_modules/
 *.txt
 *.png
 index.*
+.vscode/
