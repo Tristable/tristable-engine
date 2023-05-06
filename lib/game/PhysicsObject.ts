@@ -4,13 +4,22 @@ import { MovingObject } from "./MovingObject.js";
 
 /** The environment for `PhysicsObject`s to use. */
 export interface PhysicsEnvironment {
-    /** The gravity to be applied to the y velocity of the `PhysicsObject` every update. */
+    /** The gravity to be applied to the y velocity of the `PhysicsObject` every update.
+     * 
+     * Default: 2400
+     */
     gravity: number;
 
-    /** The friction to be applied to the x velocity of the `PhysicsObject` when touching the ground. */
+    /** The friction to be applied to the x velocity of the `PhysicsObject` when touching the ground.
+     * 
+     * Default: 0
+    */
     friction: number;
 
-    /** The air resistance to be applied to the x velocity of the `PhysicsObject` every update. */
+    /** The air resistance to be applied to the x velocity of the `PhysicsObject` every update.
+     * 
+     * Default: 1000
+    */
     airResistance: number;
 }
 

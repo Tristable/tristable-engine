@@ -21,24 +21,7 @@ export class Texture {
     }
 
     /** Loads a single texture from a URL or file path. */
-    static loadFromURL(url: string, partition?: Rect2, fallback?: Texture): Promise<Texture> {
-        return new Promise((r: (v: Texture) => void, rj: (r: any) => void) => {
-            const src: HTMLImageElement = new Image();
-            src.src = url;
-            src.addEventListener("load", () => Texture.createFromSource(src, partition, fallback).then(r).catch(rj));
-            src.addEventListener("error", (e: ErrorEvent) => {
-                if (!fallback) {
-                    rj(e);
-                    throw new TristableError(`Failed to load image from ${url}`);
-                }
-                console.warn(`Failed to load image from ${url}`);
-                r(fallback);
-            });
-        });
-    }
-
-    /** Loads a single SVG texture from a URL or file path. */
-    static loadFromSVGURL(url: string, size: Vector2, partition?: Rect2, fallback?: Texture): Promise<Texture> {
+    static loadFromURL(url: string, size: Vector2, partition?: Rect2, fallback?: Texture): Promise<Texture> {
         return new Promise((r: (v: Texture) => void, rj: (r: any) => void) => {
             const oc: OffscreenCanvas = new OffscreenCanvas(size.x, size.y);
             const c: OffscreenCanvasRenderingContext2D = oc.getContext("2d")!;
@@ -60,7 +43,7 @@ export class Texture {
     }
 
     /** Repeats `source` across a texture of size `size` every `repeatSize` units. `source` is scaled to `repeatSize`. */
-    static createTiled(source: Texture, size: Vector2, repeatSize: Vector2): Promise<Texture> {
+    static createTiled(source: Texture, size: Vector2, repeatSize: Vector2, fallback?: Texture): Promise<Texture> {
         const oc: OffscreenCanvas = new OffscreenCanvas(size.x, size.y);
         const c: OffscreenCanvasRenderingContext2D = oc.getContext("2d")!;
 
@@ -78,46 +61,25 @@ export class Texture {
             }
         }
 
-        return Texture.createFromSource(oc);
+        return Texture.createFromSource(oc, Rect2.xywh(0, 0, 0, 0), fallback);
     }
 
     /** Loads multiple textures from a single source URL or file path. */
-    static loadSpritesheetFromURL(url: string, partitions: Map<string, Rect2>, fallback?: Texture): Promise<Map<string, Texture>> {
+    static createSpritesheetFromTexture(source: Texture, partitions: Map<string, Rect2>, fallback?: Texture): Promise<Map<string, Texture>> {
         return new Promise((r: (v: Map<string, Texture>) => void, rj: (r: any) => void) => {
-            const src = new Image();
-            src.src = url;
-            src.addEventListener("load", () => {
-                const textures: Map<string, Texture> = new Map();
-                const promises: Promise<void>[] = [];
-                for (const [k, v] of partitions) promises.push((Texture.createFromSource(src, v, fallback).then((t) => textures.set(k, t), undefined) as Promise<void>).catch(rj));
-                Promise.all(promises).then(() => r(textures));
-            });
-            src.addEventListener("error", (e: ErrorEvent) => {
-                if (!fallback) {
-                    rj(e);
-                    throw new TristableError(`Failed to load image from ${url}`);
-                }
-                console.warn(`Failed to load image from ${url}`);
-                const textures: Map<string, Texture> = new Map();
-                for (const [k] of partitions) textures.set(k, fallback);
-                r(textures);
-            });
+            const textures: Map<string, Texture> = new Map();
+            const promises: Promise<void>[] = [];
+            for (const [k, v] of partitions) promises.push((Texture.createFromSource(source.src, v, fallback).then((t) => textures.set(k, t), undefined) as Promise<void>).catch(rj));
+            Promise.all(promises).then(() => r(textures));
         });
     }
 
-    /** Loads multiple textures of the same size from a single source URL or file path. */
-    static loadEvenSpritesheetFromURL(url: string, partitionSize: Vector2, partitionPositions: Map<string, Vector2>, fallback?: Texture): Promise<Map<string, Texture>> {
-        const partitions: Map<string, Rect2> = new Map();
-        for (const [k, v] of partitionPositions) partitions.set(k, new Rect2(v, partitionSize));
-        return Texture.loadSpritesheetFromURL(url, partitions, fallback);
-    }
-
-    /** Creates an empty bitmap `Texture` with a certain size. */
+    /** Creates an empty `Texture` with a certain size. */
     static async generateEmpty(size: Point): Promise<Texture> {
         return await Texture.createFromSource(new OffscreenCanvas(size.x, size.y));
     }
 
-    /** Creates a solid color bitmap `Texture` with a certain size and color. */
+    /** Creates a solid color `Texture` with a certain size and color. */
     static async solidColor(size: Point, color: string): Promise<Texture> {
         const ca: OffscreenCanvas = new OffscreenCanvas(size.x, size.y);
         const c: OffscreenCanvasRenderingContext2D = ca.getContext("2d")!;
