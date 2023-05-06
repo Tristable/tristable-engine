@@ -3,5 +3,6 @@ node_modules/
 *.cmd
 *.txt
 *.png
+*.svg
 index.*
 .vscode/

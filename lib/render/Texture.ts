@@ -15,6 +15,7 @@ export class Texture {
         this.partition = partition;
     }
 
+    /** Creates a `Texture` from an `ImageBitmapSource` */
     static async createFromSource(source: ImageBitmapSource, partition?: Rect2, fallback?: Texture): Promise<Texture> {
         return new Texture(await (fallback != undefined ? createImageBitmap(source).catch(() => fallback.src) : createImageBitmap(source)), partition);
     }
@@ -25,6 +26,28 @@ export class Texture {
             const src: HTMLImageElement = new Image();
             src.src = url;
             src.addEventListener("load", () => Texture.createFromSource(src, partition, fallback).then(r).catch(rj));
+            src.addEventListener("error", (e: ErrorEvent) => {
+                if (!fallback) {
+                    rj(e);
+                    throw new TristableError(`Failed to load image from ${url}`);
+                }
+                console.warn(`Failed to load image from ${url}`);
+                r(fallback);
+            });
+        });
+    }
+
+    /** Loads a single SVG texture from a URL or file path. */
+    static loadFromSVGURL(url: string, size: Vector2, partition?: Rect2, fallback?: Texture): Promise<Texture> {
+        return new Promise((r: (v: Texture) => void, rj: (r: any) => void) => {
+            const oc: OffscreenCanvas = new OffscreenCanvas(size.x, size.y);
+            const c: OffscreenCanvasRenderingContext2D = oc.getContext("2d")!;
+            const src: HTMLImageElement = new Image();
+            src.src = url;
+            src.addEventListener("load", () => {
+                c.drawImage(src, 0, 0, size.x, size.y);
+                Texture.createFromSource(oc, partition, fallback).then(r).catch(rj);
+            });
             src.addEventListener("error", (e: ErrorEvent) => {
                 if (!fallback) {
                     rj(e);
