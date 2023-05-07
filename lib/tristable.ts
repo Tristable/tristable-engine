@@ -34,8 +34,8 @@ export { Camera, currentCamera };
 import { DrawRect, DrawRectConfig, createDrawRectConfig } from "./render/DrawRect.js";
 export { DrawRect, DrawRectConfig, createDrawRectConfig };
 
-import { DrawText, DrawTextConfig } from "./render/DrawText.js";
-export { DrawText, DrawTextConfig };
+import { DrawText, DrawTextConfig, createDrawTextConfig } from "./render/DrawText.js";
+export { DrawText, DrawTextConfig, createDrawTextConfig };
 
 import { Sprite, SpriteConfig, createSpriteConfig } from "./render/Sprite.js";
 export { Sprite, SpriteConfig, createSpriteConfig };
@@ -81,3 +81,6 @@ export { PhysicsEnvironment, PhysicsObject };
 
 import { DebugOptions, debug, launchDebugger } from "./core/debug.js";
 export { DebugOptions, debug, launchDebugger };
+
+import { TextObject } from "./game/TextObject.js";
+export { TextObject };

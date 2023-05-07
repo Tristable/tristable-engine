@@ -4,7 +4,7 @@ import { GameObject } from "./GameObject.js";
 import { Object2D } from "./Object2D.js";
 import { DrawRect, DrawRectConfig, createDrawRectConfig } from "../render/DrawRect.js";
 
-/** A visible rectangle. */
+/** A `GameObject` that renders a `DrawRect`. */
 export class RectObject extends Object2D {
     /** The configuration for the resulting `DrawRect`. */
     rectConfig: Required<DrawRectConfig>;
