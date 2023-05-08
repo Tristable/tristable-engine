@@ -20,7 +20,7 @@ npm i tristable-engine
 ```ts
 import * as tse from "tristable-engine";
 
-// configures the game canvas
+// configures Tristable Engine to use a 1920x1080 canvas with a black background
 tse.configureCanvas({
     size: new tse.Vector2(1920, 1080),
     bg: "black"
