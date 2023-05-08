@@ -29,7 +29,7 @@ tse.configureCanvas({
 // runs before the game starts
 tse.onPreload(async () => {
     // load public/vite.svg as a 256x256 bitmap
-    tse.loadTexture("vite", await tse.Texture.loadFromURL("typescript.svg", new tse.Vector2(256, 256)));
+    tse.loadTexture("vite", await tse.Texture.loadFromURL("vite.svg", new tse.Vector2(256, 256)));
 });
 
 // runs after preload
