@@ -1,5 +1,11 @@
 # Usage with [Vite](https://vitejs.dev)
 
+## Prerequisites
+* [Node.js](https://nodejs.org) installed with NPM and added to PATH
+* Basic knowledge of programming and/or TypeScript
+
+## Guide
+
 1. Create a TypeScript Vite project in the current directory
 ```cmd
 npm init vite ./ -- --template vanilla-ts
