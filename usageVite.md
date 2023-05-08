@@ -6,7 +6,7 @@
 
 ## Guide
 
-1. Create a TypeScript Vite project in the current directory
+1. Create a TypeScript Vite project in the current directory (dont do `npm run dev`)
 ```cmd
 npm init vite ./ -- --template vanilla-ts
 ```
