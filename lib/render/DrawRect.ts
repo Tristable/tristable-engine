@@ -1,5 +1,6 @@
 import { Rect2 } from "../math/Rect2.js";
 import { Vector2 } from "../math/Vector2.js";
+import { currentCamera } from "./Camera.js";
 import { ctx } from "./canvas.js";
 
 /** The configuration to use when drawing a `DrawRect`. */
@@ -64,7 +65,7 @@ export class DrawRect {
         const { pos, size }: Rect2 = this.config.ignoreCamera ? this.rect : this.rect.screen;
         const { x, y }: Vector2 = pos;
         const { x: w, y: h }: Vector2 = size;
-        ctx.lineWidth = this.config.strokeWidth;
+        ctx.lineWidth = this.config.strokeWidth * (this.config.ignoreCamera ? 1 : currentCamera.zoom);
 
         ctx.translate(x + w / 2, y + h / 2);
         ctx.rotate(this.config.rotation);

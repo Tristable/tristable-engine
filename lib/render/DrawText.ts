@@ -9,11 +9,41 @@ export interface DrawTextConfig {
      * Default: `"16px arial"`
      */
     font?: string;
+
+    /** Whether or not the `DrawText` will ignore the camera and use screen position instead of world position.
+     * 
+     * Default: `false`
+     */
     ignoreCamera?: boolean;
+
+    /** The color for the `DrawText` to fill the text with. A value of `false` is no fill. 
+     * 
+     * Default: `false`
+    */
     fill?: string | false;
+
+    /** The color for the `DrawText` to outline the text with. A value of `false` is no stroke. 
+     * 
+     * Default: `false`
+    */
     stroke?: string | false;
+
+    /** The width of the outline of the `DrawText`. 
+     * 
+     * Default: `1`
+    */
     strokeWidth?: number;
+
+    /** The rotation in radians of the `DrawRect`. Rotates around the top-left corner of the text unless `centered` is `true`. In that case, it will rotate around the center of the text.
+     * 
+     * Default: `0`
+    */
     rotation?: number;
+
+    /** Whether or not to position the `globalPos` of the `DrawText` to the center of the text. If `false`, it will be based on the top-left corner.
+     * 
+     * Default: `true`
+     */
     centered?: boolean;
 }
 
@@ -26,7 +56,7 @@ export function createDrawTextConfig(config: DrawTextConfig): Required<DrawTextC
         stroke: config.stroke ?? false,
         strokeWidth: config.strokeWidth ?? 1,
         rotation: config.rotation ?? 0,
-        centered: config.centered ?? false
+        centered: config.centered ?? true
     };
 }
 
@@ -50,15 +80,12 @@ export class DrawText {
     /** Draws the `DrawText`. */
     draw(): void {
         const { x, y }: Vector2 = this.config.ignoreCamera ? this.pos : currentCamera.toScreen(this.pos);
+        const cameraScale: number = this.config.ignoreCamera ? 1 : currentCamera.zoom;
         ctx.textBaseline = this.config.centered ? "middle" : "top";
         ctx.textAlign = this.config.centered ? "center" : "left";
-        ctx.lineWidth = this.config.strokeWidth;
+        ctx.lineWidth = this.config.strokeWidth * cameraScale;
         ctx.font = this.config.font;
-
-        const metrics: TextMetrics = ctx.measureText(this.text);
-        const w: number = metrics.width;
-        const h: number = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
-        const cameraScale: number = this.config.ignoreCamera ? 1 : currentCamera.zoom;
+        
         ctx.translate(x, y);
         ctx.rotate(this.config.rotation);
         ctx.scale(cameraScale, cameraScale);
