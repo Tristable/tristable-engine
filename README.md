@@ -1,10 +1,9 @@
 <h1 align="center">
-  Tristable Engine
+  <img src="https://tristable.github.io/tristable-engine/logo.png" width="600">
   <br>
   <a href="https://www.npmjs.com/package/tristable-engine">
     <img src="https://img.shields.io/bundlephobia/min/tristable-engine?label=minified%20size&logo=npm&style=for-the-badge">
   </a>
-  <br>
   <a href="https://www.npmjs.com/package/tristable-engine">
     <img src="https://img.shields.io/npm/dt/tristable-engine?style=for-the-badge&logo=npm">
   </a>
@@ -12,7 +11,6 @@
   <a href="https://www.npmjs.com/package/tristable-engine">
     <img src="https://img.shields.io/npm/v/tristable-engine?label=version&logo=npm&style=for-the-badge">
   </a>
-  <br>
   <a href="https://tristable.github.io/tristable-engine/docs">
     <img src="https://img.shields.io/badge/📖-Documentation-orange?style=for-the-badge">
   </a>
