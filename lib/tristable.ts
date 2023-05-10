@@ -84,3 +84,12 @@ export { DebugOptions, debug, launchDebugger };
 
 import { TextObject } from "./game/TextObject.js";
 export { TextObject };
+
+import { DrawLine, createDrawLineConfig, DrawLineConfig } from "./render/DrawLine.js";
+export { DrawLine, createDrawLineConfig, DrawLineConfig };
+
+import { Polygon, RawPolygon } from "./math/Polygon.js";
+export { Polygon, RawPolygon };
+
+import { DrawPolygon, createDrawPolygonConfig, DrawPolygonConfig } from "./render/DrawPolygon.js";
+export { DrawPolygon, createDrawPolygonConfig, DrawPolygonConfig };

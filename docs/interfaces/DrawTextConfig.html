@@ -23,7 +23,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">DrawTextConfig</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L6">lib/render/DrawText.ts:6</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L6">lib/render/DrawText.ts:6</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -43,14 +43,20 @@
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="centered" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>centered</span><a href="#centered" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
-<div class="tsd-signature">centered<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
+<div class="tsd-signature">centered<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Whether or not to position the <code>globalPos</code> of the <code>DrawText</code> to the center of the text. If <code>false</code>, it will be based on the top-left corner.</p>
+<p>Default: <code>true</code></p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L17">lib/render/DrawText.ts:17</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L47">lib/render/DrawText.ts:47</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="fill" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>fill</span><a href="#fill" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">fill<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div><aside class="tsd-sources">
+<div class="tsd-signature">fill<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+<div class="tsd-comment tsd-typography"><p>The color for the <code>DrawText</code> to fill the text with. A value of <code>false</code> is no fill. </p>
+<p>Default: <code>false</code></p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L13">lib/render/DrawText.ts:13</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L23">lib/render/DrawText.ts:23</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="font" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>font</span><a href="#font" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">font<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -58,27 +64,39 @@
 <p>Default: <code>&quot;16px arial&quot;</code></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L11">lib/render/DrawText.ts:11</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L11">lib/render/DrawText.ts:11</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="ignoreCamera" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>ignore<wbr/>Camera</span><a href="#ignoreCamera" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">ignore<wbr/>Camera<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
+<div class="tsd-signature">ignore<wbr/>Camera<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Whether or not the <code>DrawText</code> will ignore the camera and use screen position instead of world position.</p>
+<p>Default: <code>false</code></p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L12">lib/render/DrawText.ts:12</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L17">lib/render/DrawText.ts:17</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="rotation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>rotation</span><a href="#rotation" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">rotation<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
+<div class="tsd-signature">rotation<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The rotation in radians of the <code>DrawRect</code>. Rotates around the top-left corner of the text unless <code>centered</code> is <code>true</code>. In that case, it will rotate around the center of the text.</p>
+<p>Default: <code>0</code></p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L16">lib/render/DrawText.ts:16</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L41">lib/render/DrawText.ts:41</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="stroke" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>stroke</span><a href="#stroke" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">stroke<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div><aside class="tsd-sources">
+<div class="tsd-signature">stroke<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+<div class="tsd-comment tsd-typography"><p>The color for the <code>DrawText</code> to outline the text with. A value of <code>false</code> is no stroke. </p>
+<p>Default: <code>false</code></p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L14">lib/render/DrawText.ts:14</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L29">lib/render/DrawText.ts:29</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="strokeWidth" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>stroke<wbr/>Width</span><a href="#strokeWidth" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">stroke<wbr/>Width<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
+<div class="tsd-signature">stroke<wbr/>Width<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The width of the outline of the <code>DrawText</code>. </p>
+<p>Default: <code>1</code></p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f73807f/lib/render/DrawText.ts#L15">lib/render/DrawText.ts:15</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/d17f25e/lib/render/DrawText.ts#L35">lib/render/DrawText.ts:35</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -114,6 +132,8 @@
 <li><a href="../classes/Camera.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Camera</span></a></li>
 <li><a href="../classes/CameraObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Camera<wbr/>Object</span></a></li>
 <li><a href="../classes/Collider.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Collider</span></a></li>
+<li><a href="../classes/DrawLine.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Draw<wbr/>Line</span></a></li>
+<li><a href="../classes/DrawPolygon.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Draw<wbr/>Polygon</span></a></li>
 <li><a href="../classes/DrawRect.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Draw<wbr/>Rect</span></a></li>
 <li><a href="../classes/DrawText.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Draw<wbr/>Text</span></a></li>
 <li><a href="../classes/GameObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Game<wbr/>Object</span></a></li>
@@ -123,6 +143,7 @@
 <li><a href="../classes/MovingObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Moving<wbr/>Object</span></a></li>
 <li><a href="../classes/Object2D.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Object2D</span></a></li>
 <li><a href="../classes/PhysicsObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Physics<wbr/>Object</span></a></li>
+<li><a href="../classes/Polygon.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Polygon</span></a></li>
 <li><a href="../classes/Rect2.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Rect2</span></a></li>
 <li><a href="../classes/RectObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Rect<wbr/>Object</span></a></li>
 <li><a href="../classes/Sprite.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Sprite</span></a></li>
@@ -134,6 +155,8 @@
 <li><a href="ActionEventBase.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg><span>Action<wbr/>Event<wbr/>Base</span></a></li>
 <li><a href="CanvasConfig.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Canvas<wbr/>Config</span></a></li>
 <li><a href="DebugOptions.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Debug<wbr/>Options</span></a></li>
+<li><a href="DrawLineConfig.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Draw<wbr/>Line<wbr/>Config</span></a></li>
+<li><a href="DrawPolygonConfig.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Draw<wbr/>Polygon<wbr/>Config</span></a></li>
 <li><a href="DrawRectConfig.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Draw<wbr/>Rect<wbr/>Config</span></a></li>
 <li><a href="DrawTextConfig.html" class="current tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Draw<wbr/>Text<wbr/>Config</span></a></li>
 <li><a href="KeyActionEvent.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Key<wbr/>Action<wbr/>Event</span></a></li>
@@ -144,6 +167,7 @@
 <li><a href="PhysicsEnvironment.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Physics<wbr/>Environment</span></a></li>
 <li><a href="Point.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Point</span></a></li>
 <li><a href="PolarCoordinate.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Polar<wbr/>Coordinate</span></a></li>
+<li><a href="RawPolygon.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Raw<wbr/>Polygon</span></a></li>
 <li><a href="RectBounds.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Rect<wbr/>Bounds</span></a></li>
 <li><a href="RectComparisonData.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Rect<wbr/>Comparison<wbr/>Data</span></a></li>
 <li><a href="Rectangle.html" class="tsd-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Rectangle</span></a></li>
@@ -164,6 +188,8 @@
 <li><a href="../variables/treeSetupHandlers.html" class="tsd-kind-variable"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>tree<wbr/>Setup<wbr/>Handlers</span></a></li>
 <li><a href="../variables/updateLoopHandlers.html" class="tsd-kind-variable"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>update<wbr/>Loop<wbr/>Handlers</span></a></li>
 <li><a href="../functions/configureCanvas.html" class="tsd-kind-function"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-64-path"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)" id="icon-64-text"></path></svg><span>configure<wbr/>Canvas</span></a></li>
+<li><a href="../functions/createDrawLineConfig.html" class="tsd-kind-function"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Draw<wbr/>Line<wbr/>Config</span></a></li>
+<li><a href="../functions/createDrawPolygonConfig.html" class="tsd-kind-function"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Draw<wbr/>Polygon<wbr/>Config</span></a></li>
 <li><a href="../functions/createDrawRectConfig.html" class="tsd-kind-function"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Draw<wbr/>Rect<wbr/>Config</span></a></li>
 <li><a href="../functions/createDrawTextConfig.html" class="tsd-kind-function"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Draw<wbr/>Text<wbr/>Config</span></a></li>
 <li><a href="../functions/createSpriteConfig.html" class="tsd-kind-function"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Sprite<wbr/>Config</span></a></li>
