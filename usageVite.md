@@ -1,22 +1,19 @@
 # Usage with [Vite](https://vitejs.dev)
 
 ## Prerequisites
-* [Node.js](https://nodejs.org) installed with NPM and added to PATH
+* [Node.js](https://nodejs.org) installed with NPM
 * Basic knowledge of programming and/or TypeScript
 
 ## Guide
 
-1. Create a TypeScript Vite project in the current directory (dont do `npm run dev`)
+1. Create a TypeScript Vite project with `tristable-engine`
 ```cmd
 npm init vite ./ -- --template vanilla-ts
-```
-2. Install `tristable-engine`
-```cmd
 npm i tristable-engine
 ```
-3. Remove `src/counter.ts`, `src/style.css`, and `src/typescript.svg`
+2. Remove `src/counter.ts`, `src/style.css`, and `src/typescript.svg`
 
-4. Write your game's code in `src/main.ts`
+3. Write your game's code in `src/main.ts`
 ```ts
 import * as tse from "tristable-engine";
 
@@ -52,7 +49,7 @@ tse.onTreeSetup(() => {
 // start the game
 await tse.init();
 ```
-5. Serve your code locally
+4. Serve your code locally
 ```
 npx vite --open
 ```
