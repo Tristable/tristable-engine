@@ -50,14 +50,15 @@ export class PhysicsObject extends MovingObject {
         const floor: boolean = this.onFloor;
         const ceil: boolean = this.onCeil;
 
+        if (wall) this.velocity.x = 0;
+        this.velocity.x += this.acceleration * delta;
+        if ((floor && this.velocity.y > 0) || (ceil && this.velocity.y < 0)) this.velocity.y = 0;
+        this.velocity.y += this.env.gravity * delta;
+
         if (!wall) {
-            this.velocity.x += this.acceleration * delta;
             if (this.velocity.x > 0) this.velocity.x -= Math.min((this.env.airResistance + (floor ? this.env.friction : 0)) * delta, this.velocity.x);
             if (this.velocity.x < 0) this.velocity.x += Math.min((this.env.airResistance + (floor ? this.env.friction : 0)) * delta, -this.velocity.x);
             if (Math.abs(this.velocity.x) > this.maximumVelocity) this.velocity.x = this.velocity.x < 0 ? -this.maximumVelocity : this.maximumVelocity;
-        } else this.velocity.x = 0;
-        
-        this.velocity.y += this.env.gravity * delta;
-        if ((floor && this.velocity.y > 0) || (ceil && this.velocity.y < 0)) this.velocity.y = 0;
+        }
     }
 }
