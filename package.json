@@ -1,6 +1,6 @@
 {
     "name": "tristable-engine",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A JS/TS game engine for making simple 2D games.",
     "main": "build/lib/tristable.js",
     "types": "build/lib/tristable.d.ts",

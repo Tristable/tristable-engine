@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Camera | tristable-engine</title><meta name="description" content="Documentation for tristable-engine"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Matrix | tristable-engine</title><meta name="description" content="Documentation for tristable-engine"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,14 +13,17 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">tristable-engine</a></li>
-<li><a href="Camera.html">Camera</a></li></ul>
-<h1>Class Camera</h1></div>
+<li><a href="Matrix.html">Matrix</a></li></ul>
+<h1>Class Matrix</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>An NxM matrix.</p>
+</div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">Camera</span></li></ul></section><aside class="tsd-sources">
+<li><span class="target">Matrix</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L4">lib/render/Camera.ts:4</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L4">lib/math/Matrix.ts:4</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -28,170 +31,208 @@
 <div class="tsd-accordion-details">
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Constructors</h3>
-<div class="tsd-index-list"><a href="Camera.html#constructor" class="tsd-index-link tsd-kind-constructor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#4D7FFF" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-512-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-512-text"></path></svg><span>constructor</span></a>
+<div class="tsd-index-list"><a href="Matrix.html#constructor" class="tsd-index-link tsd-kind-constructor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#4D7FFF" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-512-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-512-text"></path></svg><span>constructor</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Properties</h3>
-<div class="tsd-index-list"><a href="Camera.html#_id" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>#id</span></a>
-<a href="Camera.html#_zoom" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>#zoom</span></a>
-<a href="Camera.html#pos" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>pos</span></a>
-<a href="Camera.html#zmax" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>zmax</span></a>
-<a href="Camera.html#zmin" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>zmin</span></a>
+<div class="tsd-index-list"><a href="Matrix.html#_values" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>#values</span></a>
+<a href="Matrix.html#cols" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>cols</span></a>
+<a href="Matrix.html#rows" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>rows</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Accessors</h3>
-<div class="tsd-index-list"><a href="Camera.html#current" class="tsd-index-link tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4D4D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-262144-path"></rect><path d="M8.85 16L11.13 7.24H12.582L14.85 16H13.758L13.182 13.672H10.53L9.954 16H8.85ZM10.746 12.76H12.954L12.282 10.06C12.154 9.548 12.054 9.12 11.982 8.776C11.91 8.432 11.866 8.208 11.85 8.104C11.834 8.208 11.79 8.432 11.718 8.776C11.646 9.12 11.546 9.544 11.418 10.048L10.746 12.76Z" fill="var(--color-text)" id="icon-262144-text"></path></svg><span>current</span></a>
-<a href="Camera.html#id" class="tsd-index-link tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>id</span></a>
-<a href="Camera.html#zoom" class="tsd-index-link tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>zoom</span></a>
-<a href="Camera.html#default" class="tsd-index-link tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>default</span></a>
+<div class="tsd-index-list"><a href="Matrix.html#string" class="tsd-index-link tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4D4D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-262144-path"></rect><path d="M8.85 16L11.13 7.24H12.582L14.85 16H13.758L13.182 13.672H10.53L9.954 16H8.85ZM10.746 12.76H12.954L12.282 10.06C12.154 9.548 12.054 9.12 11.982 8.776C11.91 8.432 11.866 8.208 11.85 8.104C11.834 8.208 11.79 8.432 11.718 8.776C11.646 9.12 11.546 9.544 11.418 10.048L10.746 12.76Z" fill="var(--color-text)" id="icon-262144-text"></path></svg><span>string</span></a>
+<a href="Matrix.html#values" class="tsd-index-link tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>values</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Methods</h3>
-<div class="tsd-index-list"><a href="Camera.html#set" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>set</span></a>
-<a href="Camera.html#toScreen" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>to<wbr/>Screen</span></a>
-<a href="Camera.html#toWorld" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>to<wbr/>World</span></a>
+<div class="tsd-index-list"><a href="Matrix.html#add" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>add</span></a>
+<a href="Matrix.html#get" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get</span></a>
+<a href="Matrix.html#mul" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>mul</span></a>
+<a href="Matrix.html#set" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set</span></a>
+<a href="Matrix.html#setAll" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>All</span></a>
+<a href="Matrix.html#sub" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>sub</span></a>
+<a href="Matrix.html#toString" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>to<wbr/>String</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Constructors</h2>
 <section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class"><a id="constructor" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="constructor.new_Camera">new <wbr/>Camera<span class="tsd-signature-symbol">(</span>zmin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, zmax<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, current<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a><a href="#constructor.new_Camera" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="constructor.new_Matrix">new <wbr/>Matrix<span class="tsd-signature-symbol">(</span>rows<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, cols<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><a href="#constructor.new_Matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>zmin: <span class="tsd-signature-type">number</span></h5></li>
+<h5>rows: <span class="tsd-signature-type">number</span></h5></li>
 <li>
-<h5>zmax: <span class="tsd-signature-type">number</span></h5></li>
-<li>
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> current: <span class="tsd-signature-type">boolean</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a></h4><aside class="tsd-sources">
+<h5>cols: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L11">lib/render/Camera.ts:11</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L13">lib/math/Matrix.ts:13</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
-<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_id" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>#id</span><a href="#_id" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">#id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_values" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>#values</span><a href="#_values" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">#values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L9">lib/render/Camera.ts:9</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_zoom" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>#zoom</span><a href="#_zoom" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">#zoom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div><aside class="tsd-sources">
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L5">lib/math/Matrix.ts:5</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="cols" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>cols</span><a href="#cols" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">cols<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The number of columns in the <code>Matrix</code>.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L5">lib/render/Camera.ts:5</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="pos" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>pos</span><a href="#pos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">pos<span class="tsd-signature-symbol">:</span> <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L11">lib/math/Matrix.ts:11</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="rows" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>rows</span><a href="#rows" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">rows<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The number of rows in the <code>Matrix</code>.</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L6">lib/render/Camera.ts:6</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="zmax" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>zmax</span><a href="#zmax" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">zmax<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L8">lib/render/Camera.ts:8</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="zmin" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>zmin</span><a href="#zmin" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">zmin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L7">lib/render/Camera.ts:7</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L8">lib/math/Matrix.ts:8</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Accessors</h2>
-<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="current" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>current</span><a href="#current" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="string" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>string</span><a href="#string" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="current.current-1"><span class="tsd-signature-symbol">get</span> current<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+<li class="tsd-signature" id="string.string-1"><span class="tsd-signature-symbol">get</span> string<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<div class="tsd-comment tsd-typography"><p>Converts the <code>Matrix</code> to a string representation. Same as <code>toString()</code>.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L46">lib/render/Camera.ts:46</a></li></ul></aside></li>
-<li class="tsd-signature" id="current.current-2"><span class="tsd-signature-symbol">set</span> current<span class="tsd-signature-symbol">(</span>current<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L94">lib/math/Matrix.ts:94</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="values" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>values</span><a href="#values" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+<li class="tsd-signature" id="values.values-1"><span class="tsd-signature-symbol">get</span> values<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Valies in the <code>Matrix</code> in the form <code>values[row][col]</code>.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L33">lib/math/Matrix.ts:33</a></li></ul></aside></li>
+<li class="tsd-signature" id="values.values-2"><span class="tsd-signature-symbol">set</span> values<span class="tsd-signature-symbol">(</span>vals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>current: <span class="tsd-signature-type">boolean</span></h5></li></ul></div>
+<h5>vals: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L41">lib/render/Camera.ts:41</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="id" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>id</span><a href="#id" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="id.id-1"><span class="tsd-signature-symbol">get</span> id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-<li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L17">lib/render/Camera.ts:17</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="zoom" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>zoom</span><a href="#zoom" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="zoom.zoom-1"><span class="tsd-signature-symbol">get</span> zoom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-<li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L29">lib/render/Camera.ts:29</a></li></ul></aside></li>
-<li class="tsd-signature" id="zoom.zoom-2"><span class="tsd-signature-symbol">set</span> zoom<span class="tsd-signature-symbol">(</span>z<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-<li class="tsd-description">
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5>z: <span class="tsd-signature-type">number</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L25">lib/render/Camera.ts:25</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="default" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>default</span><a href="#default" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="default.default-1"><span class="tsd-signature-symbol">get</span> default<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a></li>
-<li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L21">lib/render/Camera.ts:21</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L37">lib/math/Matrix.ts:37</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="add" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>add</span><a href="#add" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="add.add-1">add<span class="tsd-signature-symbol">(</span>m<span class="tsd-signature-symbol">: </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><a href="#add.add-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Adds the <code>Matrix</code> to another <code>Matrix</code>. Returns <code>null</code> if the matrices are not the same size.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>m: <a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L69">lib/math/Matrix.ts:69</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="get" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get</span><a href="#get" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="get.get-1">get<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><a href="#get.get-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Gets a value in the <code>Matrix</code></p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>row: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>col: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L28">lib/math/Matrix.ts:28</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="mul" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>mul</span><a href="#mul" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="mul.mul-1">mul<span class="tsd-signature-symbol">(</span>m<span class="tsd-signature-symbol">: </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><a href="#mul.mul-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Multiplies the <code>Matrix</code> with another <code>Matrix</code>. Returns <code>null</code> if the matrices cannot be multiplied. </p>
+<p>Matrices cannot be multiplied if the number of columns in the <code>Matrix</code> do not equal the number of rows in the <code>Matrix</code> being multiplied with.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>m: <a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L53">lib/math/Matrix.ts:53</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="set" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set</span><a href="#set" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="set.set-1">set<span class="tsd-signature-symbol">(</span>cam<span class="tsd-signature-symbol">: </span><a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a><a href="#set.set-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="set.set-1">set<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><a href="#set.set-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets a value in the <code>Matrix</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>cam: <a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Camera.html" class="tsd-signature-type" data-tsd-kind="Class">Camera</a></h4><aside class="tsd-sources">
+<h5>row: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>col: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>val: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L33">lib/render/Camera.ts:33</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="toScreen" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>to<wbr/>Screen</span><a href="#toScreen" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L21">lib/math/Matrix.ts:21</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="setAll" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>All</span><a href="#setAll" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="toScreen.toScreen-1">to<wbr/>Screen<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a><a href="#toScreen.toScreen-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="setAll.setAll-1">set<wbr/>All<span class="tsd-signature-symbol">(</span>vals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><a href="#setAll.setAll-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets all the values in the <code>Matrix</code>.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>v: <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></h4><aside class="tsd-sources">
+<h5>vals: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L50">lib/render/Camera.ts:50</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="toWorld" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>to<wbr/>World</span><a href="#toWorld" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L44">lib/math/Matrix.ts:44</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="sub" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sub</span><a href="#sub" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="toWorld.toWorld-1">to<wbr/>World<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a><a href="#toWorld.toWorld-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="sub.sub-1">sub<span class="tsd-signature-symbol">(</span>m<span class="tsd-signature-symbol">: </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a><a href="#sub.sub-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Adds another <code>Matrix</code> from the <code>Matrix</code>. Returns <code>null</code> if the matrices are not the same size.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>v: <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Vector2.html" class="tsd-signature-type" data-tsd-kind="Class">Vector2</a></h4><aside class="tsd-sources">
+<h5>m: <a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Matrix.html" class="tsd-signature-type" data-tsd-kind="Class">Matrix</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/render/Camera.ts#L54">lib/render/Camera.ts:54</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L79">lib/math/Matrix.ts:79</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="toString" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>to<wbr/>String</span><a href="#toString" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="toString.toString-1">to<wbr/>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#toString.toString-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Converts the <code>Matrix</code> to a string representation. Same as the <code>string</code> property.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/Tristable/tristable-engine/blob/f551c46/lib/math/Matrix.ts#L89">lib/math/Matrix.ts:89</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -212,25 +253,25 @@
 <div class="tsd-accordion-details">
 <ul>
 <li><a href="#constructor" class="tsd-kind-constructor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-512-path"></use><use href="#icon-512-text"></use></svg><span>constructor</span></a></li>
-<li><a href="#_id" class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>#id</span></a></li>
-<li><a href="#_zoom" class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>#zoom</span></a></li>
-<li><a href="#pos" class="tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>pos</span></a></li>
-<li><a href="#zmax" class="tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>zmax</span></a></li>
-<li><a href="#zmin" class="tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>zmin</span></a></li>
-<li><a href="#current" class="tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>current</span></a></li>
-<li><a href="#id" class="tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>id</span></a></li>
-<li><a href="#zoom" class="tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>zoom</span></a></li>
-<li><a href="#default" class="tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>default</span></a></li>
+<li><a href="#_values" class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>#values</span></a></li>
+<li><a href="#cols" class="tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>cols</span></a></li>
+<li><a href="#rows" class="tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>rows</span></a></li>
+<li><a href="#string" class="tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>string</span></a></li>
+<li><a href="#values" class="tsd-kind-accessor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg><span>values</span></a></li>
+<li><a href="#add" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>add</span></a></li>
+<li><a href="#get" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get</span></a></li>
+<li><a href="#mul" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>mul</span></a></li>
 <li><a href="#set" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set</span></a></li>
-<li><a href="#toScreen" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>to<wbr/>Screen</span></a></li>
-<li><a href="#toWorld" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>to<wbr/>World</span></a></li></ul></div></details></div>
+<li><a href="#setAll" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>All</span></a></li>
+<li><a href="#sub" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>sub</span></a></li>
+<li><a href="#toString" class="tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>to<wbr/>String</span></a></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-4-path"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)" id="icon-4-text"></path></svg><span>tristable-<wbr/>engine</span></a>
 <ul class="tsd-small-nested-navigation">
 <li><a href="../enums/ActionEventType.html" class="tsd-kind-enum"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-enum)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-8-path"></rect><path d="M9.45 16V7.24H14.49V8.224H10.518V10.936H14.07V11.908H10.518V15.016H14.49V16H9.45Z" fill="var(--color-text)" id="icon-8-text"></path></svg><span>Action<wbr/>Event<wbr/>Type</span></a></li>
 <li><a href="../enums/WheelDirection.html" class="tsd-kind-enum"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8-path"></use><use href="#icon-8-text"></use></svg><span>Wheel<wbr/>Direction</span></a></li>
 <li><a href="Action.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-128-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-128-text"></path></svg><span>Action</span></a></li>
-<li><a href="Camera.html" class="current tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Camera</span></a></li>
+<li><a href="Camera.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Camera</span></a></li>
 <li><a href="CameraObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Camera<wbr/>Object</span></a></li>
 <li><a href="Collider.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Collider</span></a></li>
 <li><a href="DrawLine.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Draw<wbr/>Line</span></a></li>
@@ -240,7 +281,7 @@
 <li><a href="GameObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Game<wbr/>Object</span></a></li>
 <li><a href="InputManager.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Input<wbr/>Manager</span></a></li>
 <li><a href="KeyboardManager.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Keyboard<wbr/>Manager</span></a></li>
-<li><a href="Matrix.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Matrix</span></a></li>
+<li><a href="Matrix.html" class="current tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Matrix</span></a></li>
 <li><a href="MouseManager.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Mouse<wbr/>Manager</span></a></li>
 <li><a href="MovingObject.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Moving<wbr/>Object</span></a></li>
 <li><a href="Object2D.html" class="tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Object2D</span></a></li>
