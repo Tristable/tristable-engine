@@ -14,6 +14,9 @@
   <a href="https://tristable.github.io/tristable-engine/docs">
     <img src="https://img.shields.io/badge/📖-Documentation-orange?style=for-the-badge">
   </a>
+  <a href="https://github.com/Tristable/tristable-engine/tree/main/CHANGELOG.md">
+    <img src="https://img.shields.io/badge/📖-Changelog-orange?style=for-the-badge">
+  </a>
 </h1>
 <p align="center">
   A JavaScript/TypeScript game engine for making simple games.
