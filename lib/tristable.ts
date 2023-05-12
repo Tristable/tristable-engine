@@ -93,3 +93,6 @@ export { Polygon, RawPolygon };
 
 import { DrawPolygon, createDrawPolygonConfig, DrawPolygonConfig } from "./render/DrawPolygon.js";
 export { DrawPolygon, createDrawPolygonConfig, DrawPolygonConfig };
+
+import { Matrix } from "./math/Matrix.js";
+export { Matrix };
