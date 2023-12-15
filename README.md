@@ -24,5 +24,4 @@
 
 # Usage
 
-* With Tristable Engine GUI (Coming Soon)
 * [With Vite + TypeScript](https://github.com/Tristable/tristable-engine/blob/main/usageVite.md)
